@@ -43,6 +43,18 @@
 //! @brief Contiguous FLEXSPINOR meomry count
 #define FLEXSPINOR_REGION_COUNT (1U)
 
+//! @brief Maximum number of IPED regions that can be configured with mem_config API.
+#define FLEXSPI_IPED_CONFIG_REGION_COUNT 4
+
+//! @brief Tag to use for mem_config API to indicate an IPED configuration structure.
+#define FLEXSPI_IPED_CONFIG_TAG                  (0xA0U)
+//! @brief Tag to use for mem_config API to trigger write-back of the current IPED 
+//configuration structure.
+#define FLEXSPI_WRITE_IPED_CFG_BLK_FOR_IMAGE_TAG (0xAAU)
+
+//! @brief Tag to use for mem_config API to trigger write-back of the current FCB.
+#define FLEXSPI_WRITE_CFG_BLK_FOR_IMAGE_TAG      (0xB0U)
+
 /*! @brief iap version for ROM*/
 enum iap_version_constants
 {
@@ -176,6 +188,74 @@ typedef union StandardVersion
     };
     uint32_t version; //!< combined version numbers
 } standard_version_t;
+
+//!@brief Configuration structure to use with mem_config API to 
+// configure IPED regions.
+typedef struct _flexspi_iped_region_config
+{
+    uint32_t start;
+    uint32_t end;
+    uint32_t locked; // 0: unlocked, 1: locked
+} flexspi_iped_region_config_t;
+
+//!@brief Configuration structure to use with mem_config API to 
+// configure IPED regions.
+typedef struct _flexspi_iped_config_option
+{
+    uint32_t count : 8;        // How many regions to configure
+    uint32_t offset : 8;       // Which FLEXSPI IPED region registers to use
+    uint32_t reserved : 8;
+    uint32_t tag : 8;          // Must be FLEXSPI_IPED_CONFIG_TAG
+} flexspi_iped_config_option_t;
+
+//!@brief Used number of rounds for PRINCE encryption in IPED.
+typedef enum {
+    flexspi_iped_12_rounds = 0U,
+    flexspi_iped_22_rounds = 1U,
+} flexspi_iped_prince_rounds_t;
+
+//!@brief Configuration structure to use with mem_config API to 
+//configure IPED regions.
+typedef struct _flexspi_iped_config_arg
+{
+    flexspi_iped_config_option_t option;
+    flexspi_iped_prince_rounds_t prince_rounds; 
+    flexspi_iped_region_config_t regions[FLEXSPI_IPED_CONFIG_REGION_COUNT];
+} flexspi_iped_config_arg_t;
+
+//!@brief Configuration structure to use with mem_config API to 
+// write-back IPED configuration to Flash.
+typedef struct _flexspi_iped_write_option
+{
+    uint32_t count : 8;     // How many regions to configure
+    uint32_t offset : 8;    // Which FLEXSPI IPED region registers to use
+    uint32_t reserved : 8;  
+    uint32_t tag : 8;       // Must be FLEXSPI_WRITE_IPED_CFG_BLK_FOR_IMAGE_TAG
+} flexspi_iped_write_option_t;
+
+//!@brief Configuration structure to use with mem_config API to 
+// write-back IPED configuration to Flash.
+typedef struct _flexspi_iped_write_arg
+{
+    flexspi_iped_write_option_t option;
+    uint32_t address;
+} flexspi_iped_write_arg_t;
+
+//!@brief Configuration structure to use with mem_config API to 
+// write-back FCB.
+typedef struct _flexspi_fcb_write_option
+{
+    uint32_t reserved : 24;
+    uint32_t tag : 8;       // Must be FLEXSPI_WRITE_CFG_BLK_FOR_IMAGE_TAG
+} flexspi_fcb_write_option_t;
+
+//!@brief Configuration structure to use with mem_config API to 
+// write-back FCB.
+typedef struct _flexspi_fcb_write_arg
+{
+    flexspi_iped_write_option_t option;
+    uint32_t address;
+} flexspi_fcb_write_arg_t;
 
 //!@brief IAP API Interface structure
 typedef struct iap_api_interface_struct
