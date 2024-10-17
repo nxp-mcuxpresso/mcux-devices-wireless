@@ -296,6 +296,21 @@ status_t iap_api_deinit(api_core_context_t *coreCtx);
 //!@brief Intialize the memory interface of the IAP API
 status_t iap_mem_init(api_core_context_t *coreCtx);
 
+//!@brief Perform the memory write operation. During the write operation, AHB
+//accesses to Flash will be blocked.
+//
+// The use-case for this function is for Flash programming to IPED regions
+// while executing from an IPED region. The IPED hardware does not support
+// interleaving of encryption and decryption. If executing from IPED encrypted
+// Flash, decryption is done on the fly during AHB code read accesses on Flash
+// addresses. It is necessary to block those while a write operation is
+// ongoing. This also implies that the function which triggers the blocking can
+// not be executed from Flash and therefore is executed from RAM. As this is
+// a rather special use-case it is exposed as a dedicated function.
+AT_QUICKACCESS_SECTION_CODE(status_t iap_mem_write_blocked( api_core_context_t
+            *coreCtx, uint32_t start, uint32_t lengthInBytes, const uint8_t
+            *buf, uint32_t memoryId));
+
 //!@brief Perform the memory write operation
 status_t iap_mem_write(
     api_core_context_t *coreCtx, uint32_t start, uint32_t lengthInBytes, const uint8_t *buf, uint32_t memoryId);
