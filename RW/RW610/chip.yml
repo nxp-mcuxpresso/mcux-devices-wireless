@@ -1,0 +1,67 @@
+---
+
+device.hardware_data:
+  section-type: "manifest_content"
+  belong_to: set.device.RW610
+  contents:
+    generated_from_chip_model: "yes"
+    devices:
+      - id: "RW610"
+        full_name: "RW610"
+        name: "RW610"
+        platform: "RW"
+        series: "RW"
+        family: "RW61X"
+        subfamily: "RW610"
+        core:
+          - name: "Cortex-M33"
+            type: "cm33"
+            id: "cm33"
+            description: ""
+            fpu: "SP_FPU"
+            dsp: false
+            mpu: true
+            sau: true
+            frequency_mhz: 260
+        memory:
+          memoryBlock:
+            - id: "SRAM"
+              name: "SRAM"
+              addr: 0x0
+              size: 0x130000
+              type: "RAM"
+              access: "RW"
+              default: true
+              aliases:
+                - name: "SRAM_alias1"
+                  addr: 0x10000000
+                  size: 0x130000
+                  access: "RW"
+                - name: "SRAM_alias2"
+                  addr: 0x20000000
+                  size: 0x130000
+                  access: "RW"
+                - name: "SRAM_alias3"
+                  addr: 0x30000000
+                  size: 0x130000
+                  access: "RW"
+            - id: "BootROM"
+              name: "BootROM"
+              addr: 0x3000000
+              size: 0x40000
+              type: "ROM"
+              access: "RO"
+              aliases:
+                - name: "BootROM_alias"
+                  addr: 0x13000000
+                  size: 0x40000
+                  access: "RO"
+        total_memory:
+          ram_size_kb: 1216
+          flash_size_kb: 0
+        part:
+          - name: "RW610HNA2I"
+          - name: "RW610ETA2I"
+          - name: "RW610UKA2I"
+        modules:
+...

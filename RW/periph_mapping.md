@@ -1,0 +1,1 @@
+periph:RW610,RW612

@@ -1,0 +1,131 @@
+/*!
+@page driver_log Driver Change Log
+@section clock CLOCK
+  The current CLOCK driver version is 2.3.0.
+
+  - 2.3.0
+    - Added CLOCK_GetFreq() API
+    - Removed DTRNG flag wait in clock API to avoid unconditional delay.
+      DTRNG will be reloaded in crypto init function.
+  - 2.2.0
+    - Added els_gdet clock source enumeration
+    - Fixed kMAIN_CLK_to_DMIC_CLK value
+  - 2.1.4
+    - Added noinline attribute to CLOCK_Delay() to work around compiler
+    optimization issue
+  - 2.1.3
+    - Added delay for DTRNG busy flag before disabling T3 256M
+  - 2.1.2
+    - Renamed kCLOCK_Css/kCLOCK_CssApb to kCLOCK_Els/kCLOCK_ElsApb
+  - 2.1.1
+    - Added ANA_GRP XTL power control in USB PHY API
+  - 2.1.0
+    - Added USIM_CLOCKS macro
+    - Added CLOCK_DisableUsbhsPhyClock API
+  - 2.0.1
+    - Moved g_clkinFreq and g_mclkinFreq inside extern "C"
+  - 2.0.0
+    - initial version.
+
+@section power POWER
+  The current POWER driver version is 2.5.0.
+
+  - 2.5.0
+    - Added Power_InitLoadGdetCfg() API
+    - Added bool return value for POWER_EnableGDetVSensors()
+  - 2.4.0
+    - Added POWER_TrimSvc() API
+    - Added pack parameter to POWER_InitVoltage() API
+    - Moved POWER_DelayUs() to execute in SRAM
+    - Added barriar around WFI
+    - Tweaked SVC table
+    - Fixed POWER_GetResetCause() to get correct cause
+  - 2.3.0
+    - Added POWER_SetPowerSwitchCallback() API
+    - Added POWER_InitVoltage() API
+    - Remove PMIP_BUCK_LVL configuration from POWER_InitPowerConfig().
+    - Fixed a potential compiling issue in Power_Delay()
+  - 2.2.0
+    - Added POWER_DisableGDetVSensors() API
+    - Added POWER_EnableGDetVSensors() API
+    - Added GDET/VSensor setting around PM2 PM3
+  - 2.1.1
+    - Renamed kPOWER_Pm2MemPuCss to kPOWER_Pm2MemPuEls
+    - Supported PM3 wakeup on A1 device
+  - 2.1.0
+    - Added PM3 wakeup support for A1 device.
+    - Added POWER_ConfigCauInSleep() API. Remove pm3CauPd field from power_sleep_config_t structure.
+    - Added power_init_config_t parameter in POWER_InitPowerConfig() API.
+  - 2.0.1
+    - Improved power performance
+    - Added return value for POWER_EnterPowerMode()
+  - 2.0.0
+    - initial version.
+
+@section io_mux IO_MUX
+  The current IO_MUX driver version is 2.2.0.
+
+  - 2.2.0
+    - Update io_mux signals according to data sheet.
+  - 2.1.2
+    - Fixed misra issues
+  - 2.1.1
+    - Added driver strength configuration
+  - 2.1.0
+    - Added IO_MUX_SetPinOutLevelInSleep API
+    - Added IO_MUX_SetRfPinOutLevelInSleep API
+    - Added capture pulse macro IO_MUX_AON_CAPTURE
+  - 2.0.0
+    - initial version.
+
+@section reset RESET
+  The current RESET driver version is 2.1.1.
+
+  - 2.1.1
+    - Corrected XX_RSTS definitions.
+    - Removed USDHC_RSTS.
+  - 2.1.0
+    - Added RESET_ReleasePeripheralReset() API
+  - 2.0.3
+    - Renamed CSS(Crypto subsystem) related macros to ELS(Edge lock security)
+  - 2.0.2
+    - Added USIM_RSTS macro
+  - 2.0.1
+    - Added kCSS_GDET_REF_RST_SHIFT_RSTn
+  - 2.0.0
+    - initial version.
+
+@section ocotp OCOTP
+  The current OCOTP driver version is 2.2.1.
+
+  - 2.2.1
+    - Removed reset on OTP init and deinit to keep OTP configuration on boot.
+  - 2.2.0
+    - Added OCOTP_ReadPackage() API
+    - Exposed OCOTP_ReadSocOtp() API
+  - 2.1.0
+    - Added OCOTP_ReadSVC() API.
+    - Avoid access OTP register before busy wait in OCOTP_OtpFuseRead()
+  - 2.0.1
+    - Fixed an misra issue 10.1
+  - 2.0.0
+    - initial version.
+
+@section romapi ROMAPI
+  The current ROMAPI driver version is 2.0.0.
+
+  - 2.0.0
+    - initial version for A0.
+
+@section iped IPED
+  The current IPED driver version is 1.0.0.
+
+  - 1.0.0
+    - initial version
+
+@section i2s_bridge I2S_BRIDGE
+  The current I2S_BRIDGE driver version is 2.0.0.
+
+  - 2.0.0
+    - initial version
+*/

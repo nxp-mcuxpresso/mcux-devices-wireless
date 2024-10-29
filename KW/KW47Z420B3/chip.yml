@@ -1,0 +1,56 @@
+---
+
+device.hardware_data:
+  section-type: "manifest_content"
+  belong_to: set.device.KW47Z420B3
+  contents:
+    generated_from_chip_model: "yes"
+    devices:
+      - id: "KW47Z420B3xxxA"
+        full_name: "KW47Z420B3xxxA"
+        name: "KW47Z420B3"
+        platform: "Kinetis"
+        series: "W"
+        family: "KW4x"
+        subfamily: "KW47"
+        core:
+          - name: "Cortex-M33"
+            type: "cm33"
+            id: "cm33_core0"
+            description: ""
+            fpu: "SP_FPU"
+            dsp: true
+            mpu: true
+            sau: true
+            frequency_mhz: 96
+        memory:
+          memoryBlock:
+            - id: "PROGRAM_FLASH"
+              name: "PROGRAM_FLASH"
+              addr: 0x0
+              size: 0x200000
+              type: "Flash"
+              access: "RO"
+              default: true
+              startup: true
+            - id: "TCM_SYS"
+              name: "TCM_SYS"
+              addr: 0x20000000
+              size: 0x38000
+              type: "RAM"
+              access: "RW"
+              default: true
+            - id: "TCM_CODE"
+              name: "TCM_CODE"
+              addr: 0x4000000
+              size: 0x8000
+              type: "RAM"
+              access: "RW"
+              default: true
+        total_memory:
+          ram_size_kb: 256
+          flash_size_kb: 2048
+        part:
+          - name: "KW47Z420B3AFTA"
+        modules:
+...
