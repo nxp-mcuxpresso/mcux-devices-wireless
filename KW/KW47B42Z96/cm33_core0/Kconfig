@@ -8,3 +8,8 @@ config MCUX_HW_DEVICE_KW47B42Z96_CORE_ID_cm33_core0
     default y
 
 rsource "Kconfig.chip"
+
+config ECC_RAM_STCM8_INIT
+    bool "ECC_RAM_STCM8_INIT"
+    help
+        No prefix in generated macro
