@@ -5,7 +5,6 @@
 rsource "${core_id}/Kconfig"
 
 rsource "Kconfig.chip"
-rsource "drivers/Kconfig"
 rsource "../../../arm/Kconfig.common"
 rsource "Kconfig.defconfig"
 
