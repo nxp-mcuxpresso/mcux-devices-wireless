@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 rsource "Kconfig.chip"
-rsource "drivers/Kconfig"
+rsource "../KW47Z420B3/drivers/Kconfig"
 rsource "../../../arm/Kconfig.common"
 rsource "Kconfig.defconfig"
 
