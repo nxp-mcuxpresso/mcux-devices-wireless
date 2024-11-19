@@ -48,8 +48,8 @@ device.hardware_data:
               access: "RW"
               default: true
         total_memory:
-          ram_size_kb: 256
-          flash_size_kb: 2048
+          ram_size_kb: 435
+          flash_size_kb: 2560
         part:
           - name: "KW47Z420B2AFTA"
         modules:
