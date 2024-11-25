@@ -1,0 +1,10 @@
+/*!
+@defgroup clock Clock Driver
+@details The MCUXpresso SDK provides APIs for MCUXpresso SDK devices' clock operation.
+
+The clock driver supports:
+  - Clock generator (RC32M, SFLL, and so on) configuration
+  - Clock mux and divider configuration
+  - Getting clock frequency
+
+*/
