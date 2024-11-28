@@ -3,7 +3,7 @@
 @section clock CLOCK
   The current CLOCK driver version is 2.2.2.
 
-- 2.2.2
+  - 2.2.2
     - Bug fix:
       - Updated the SDK_DEVICE_MAXIMUM_CPU_CLOCK_FREQUENCY for Core1.
   - 2.2.1
