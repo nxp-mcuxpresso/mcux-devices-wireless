@@ -19,8 +19,8 @@
 **                          KW47Z420B2AFTA
 **                          KW47Z420B3AFTA
 **
-**     Version:             rev. 1.0, 2023-05-20
-**     Build:               b240821
+**     Version:             rev. 1.0, 2024-10-13
+**     Build:               b241128
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for DMA
@@ -33,8 +33,8 @@
 **     mail:                 support@nxp.com
 **
 **     Revisions:
-**     - rev. 1.0 (2023-05-20)
-**         Initial version.
+**     - rev. 1.0 (2024-10-13)
+**         Rev. 1, 2024-10-13
 **
 ** ###################################################################
 */
@@ -42,7 +42,7 @@
 /*!
  * @file DMA.h
  * @version 1.0
- * @date 2023-05-20
+ * @date 2024-10-13
  * @brief CMSIS Peripheral Access Layer for DMA
  *
  * CMSIS Peripheral Access Layer for DMA
@@ -176,6 +176,7 @@ typedef enum _dma_request_source
     kDmaRequestADCFifoB             = 53U,         /**< ADC FIFO B request */
     kDmaRequestCMP0                 = 54U,         /**< CMP0 DMA request */
     kDmaRequestCMP1                 = 55U,         /**< CMP1 DMA request */
+    kDmaRequestCAN1                 = 56U,         /**< CAN1 DMA request */
 } dma_request_source_t;
 
 /* @} */

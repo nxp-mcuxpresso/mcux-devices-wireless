@@ -19,8 +19,8 @@
 **                          KW47Z420B2AFTA
 **                          KW47Z420B3AFTA
 **
-**     Version:             rev. 1.0, 2023-05-20
-**     Build:               b240821
+**     Version:             rev. 1.0, 2024-10-13
+**     Build:               b241128
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for LPUART
@@ -33,8 +33,8 @@
 **     mail:                 support@nxp.com
 **
 **     Revisions:
-**     - rev. 1.0 (2023-05-20)
-**         Initial version.
+**     - rev. 1.0 (2024-10-13)
+**         Rev. 1, 2024-10-13
 **
 ** ###################################################################
 */
@@ -42,7 +42,7 @@
 /*!
  * @file LPUART.h
  * @version 1.0
- * @date 2023-05-20
+ * @date 2024-10-13
  * @brief CMSIS Peripheral Access Layer for LPUART
  *
  * CMSIS Peripheral Access Layer for LPUART
@@ -377,8 +377,8 @@ typedef struct {
 #define LPUART_STAT_MA2F_SHIFT                   (14U)
 /*! MA2F - Match 2 Flag
  *  0b0..Not equal to MA2
- *  0b1..Equal to MA2
  *  0b0..No effect
+ *  0b1..Equal to MA2
  *  0b1..Clear the flag
  */
 #define LPUART_STAT_MA2F(x)                      (((uint32_t)(((uint32_t)(x)) << LPUART_STAT_MA2F_SHIFT)) & LPUART_STAT_MA2F_MASK)
@@ -387,8 +387,8 @@ typedef struct {
 #define LPUART_STAT_MA1F_SHIFT                   (15U)
 /*! MA1F - Match 1 Flag
  *  0b0..Not equal to MA1
- *  0b1..Equal to MA1
  *  0b0..No effect
+ *  0b1..Equal to MA1
  *  0b1..Clear the flag
  */
 #define LPUART_STAT_MA1F(x)                      (((uint32_t)(((uint32_t)(x)) << LPUART_STAT_MA1F_SHIFT)) & LPUART_STAT_MA1F_MASK)
@@ -397,8 +397,8 @@ typedef struct {
 #define LPUART_STAT_PF_SHIFT                     (16U)
 /*! PF - Parity Error Flag
  *  0b0..No parity error detected
- *  0b1..Parity error detected
  *  0b0..No effect
+ *  0b1..Parity error detected
  *  0b1..Clear the flag
  */
 #define LPUART_STAT_PF(x)                        (((uint32_t)(((uint32_t)(x)) << LPUART_STAT_PF_SHIFT)) & LPUART_STAT_PF_MASK)
@@ -407,8 +407,8 @@ typedef struct {
 #define LPUART_STAT_FE_SHIFT                     (17U)
 /*! FE - Framing Error Flag
  *  0b0..No framing error detected (this does not guarantee that the framing is correct)
- *  0b1..Framing error detected
  *  0b0..No effect
+ *  0b1..Framing error detected
  *  0b1..Clear the flag
  */
 #define LPUART_STAT_FE(x)                        (((uint32_t)(((uint32_t)(x)) << LPUART_STAT_FE_SHIFT)) & LPUART_STAT_FE_MASK)
@@ -417,8 +417,8 @@ typedef struct {
 #define LPUART_STAT_NF_SHIFT                     (18U)
 /*! NF - Noise Flag
  *  0b0..No noise detected
- *  0b1..Noise detected
  *  0b0..No effect
+ *  0b1..Noise detected
  *  0b1..Clear the flag
  */
 #define LPUART_STAT_NF(x)                        (((uint32_t)(((uint32_t)(x)) << LPUART_STAT_NF_SHIFT)) & LPUART_STAT_NF_MASK)
@@ -427,8 +427,8 @@ typedef struct {
 #define LPUART_STAT_OR_SHIFT                     (19U)
 /*! OR - Receiver Overrun Flag
  *  0b0..No overrun
- *  0b1..Receive overrun (new LPUART data is lost)
  *  0b0..No effect
+ *  0b1..Receive overrun (new LPUART data is lost)
  *  0b1..Clear the flag
  */
 #define LPUART_STAT_OR(x)                        (((uint32_t)(((uint32_t)(x)) << LPUART_STAT_OR_SHIFT)) & LPUART_STAT_OR_MASK)
@@ -437,8 +437,8 @@ typedef struct {
 #define LPUART_STAT_IDLE_SHIFT                   (20U)
 /*! IDLE - Idle Line Flag
  *  0b0..Idle line detected
- *  0b1..Idle line not detected
  *  0b0..No effect
+ *  0b1..Idle line not detected
  *  0b1..Clear the flag
  */
 #define LPUART_STAT_IDLE(x)                      (((uint32_t)(((uint32_t)(x)) << LPUART_STAT_IDLE_SHIFT)) & LPUART_STAT_IDLE_MASK)
@@ -519,8 +519,8 @@ typedef struct {
 #define LPUART_STAT_RXEDGIF_SHIFT                (30U)
 /*! RXEDGIF - RXD Pin Active Edge Interrupt Flag
  *  0b0..Not occurred
- *  0b1..Occurred
  *  0b0..No effect
+ *  0b1..Occurred
  *  0b1..Clear the flag
  */
 #define LPUART_STAT_RXEDGIF(x)                   (((uint32_t)(((uint32_t)(x)) << LPUART_STAT_RXEDGIF_SHIFT)) & LPUART_STAT_RXEDGIF_MASK)
@@ -529,8 +529,8 @@ typedef struct {
 #define LPUART_STAT_LBKDIF_SHIFT                 (31U)
 /*! LBKDIF - LIN Break Detect Interrupt Flag
  *  0b0..Not detected
- *  0b1..Detected
  *  0b0..No effect
+ *  0b1..Detected
  *  0b1..Clear the flag
  */
 #define LPUART_STAT_LBKDIF(x)                    (((uint32_t)(((uint32_t)(x)) << LPUART_STAT_LBKDIF_SHIFT)) & LPUART_STAT_LBKDIF_MASK)
@@ -1052,8 +1052,8 @@ typedef struct {
 #define LPUART_FIFO_RXUF_SHIFT                   (16U)
 /*! RXUF - Receiver FIFO Underflow Flag
  *  0b0..No underflow
- *  0b1..Underflow
  *  0b0..No effect
+ *  0b1..Underflow
  *  0b1..Clear the flag
  */
 #define LPUART_FIFO_RXUF(x)                      (((uint32_t)(((uint32_t)(x)) << LPUART_FIFO_RXUF_SHIFT)) & LPUART_FIFO_RXUF_MASK)
@@ -1062,8 +1062,8 @@ typedef struct {
 #define LPUART_FIFO_TXOF_SHIFT                   (17U)
 /*! TXOF - Transmitter FIFO Overflow Flag
  *  0b0..No overflow
- *  0b1..Overflow
  *  0b0..No effect
+ *  0b1..Overflow
  *  0b1..Clear the flag
  */
 #define LPUART_FIFO_TXOF(x)                      (((uint32_t)(((uint32_t)(x)) << LPUART_FIFO_TXOF_SHIFT)) & LPUART_FIFO_TXOF_MASK)

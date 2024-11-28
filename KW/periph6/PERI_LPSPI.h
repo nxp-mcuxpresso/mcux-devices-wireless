@@ -19,8 +19,8 @@
 **                          KW47Z420B2AFTA
 **                          KW47Z420B3AFTA
 **
-**     Version:             rev. 1.0, 2023-05-20
-**     Build:               b240821
+**     Version:             rev. 1.0, 2024-10-13
+**     Build:               b241128
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for LPSPI
@@ -33,8 +33,8 @@
 **     mail:                 support@nxp.com
 **
 **     Revisions:
-**     - rev. 1.0 (2023-05-20)
-**         Initial version.
+**     - rev. 1.0 (2024-10-13)
+**         Rev. 1, 2024-10-13
 **
 ** ###################################################################
 */
@@ -42,7 +42,7 @@
 /*!
  * @file LPSPI.h
  * @version 1.0
- * @date 2023-05-20
+ * @date 2024-10-13
  * @brief CMSIS Peripheral Access Layer for LPSPI
  *
  * CMSIS Peripheral Access Layer for LPSPI
@@ -181,7 +181,6 @@ typedef struct {
 #define LPSPI_VERID_FEATURE_SHIFT                (0U)
 /*! FEATURE - Module Identification Number
  *  0b0000000000000100..Standard feature set supporting a 32-bit shift register.
- *  *..
  */
 #define LPSPI_VERID_FEATURE(x)                   (((uint32_t)(((uint32_t)(x)) << LPSPI_VERID_FEATURE_SHIFT)) & LPSPI_VERID_FEATURE_MASK)
 
@@ -290,8 +289,8 @@ typedef struct {
 #define LPSPI_SR_WCF_SHIFT                       (8U)
 /*! WCF - Word Complete Flag
  *  0b0..Not complete
- *  0b1..Complete
  *  0b0..No effect
+ *  0b1..Complete
  *  0b1..Clear the flag
  */
 #define LPSPI_SR_WCF(x)                          (((uint32_t)(((uint32_t)(x)) << LPSPI_SR_WCF_SHIFT)) & LPSPI_SR_WCF_MASK)
@@ -300,8 +299,8 @@ typedef struct {
 #define LPSPI_SR_FCF_SHIFT                       (9U)
 /*! FCF - Frame Complete Flag
  *  0b0..Not complete
- *  0b1..Complete
  *  0b0..No effect
+ *  0b1..Complete
  *  0b1..Clear the flag
  */
 #define LPSPI_SR_FCF(x)                          (((uint32_t)(((uint32_t)(x)) << LPSPI_SR_FCF_SHIFT)) & LPSPI_SR_FCF_MASK)
@@ -310,8 +309,8 @@ typedef struct {
 #define LPSPI_SR_TCF_SHIFT                       (10U)
 /*! TCF - Transfer Complete Flag
  *  0b0..Not complete
- *  0b1..Complete
  *  0b0..No effect
+ *  0b1..Complete
  *  0b1..Clear the flag
  */
 #define LPSPI_SR_TCF(x)                          (((uint32_t)(((uint32_t)(x)) << LPSPI_SR_TCF_SHIFT)) & LPSPI_SR_TCF_MASK)
@@ -320,8 +319,8 @@ typedef struct {
 #define LPSPI_SR_TEF_SHIFT                       (11U)
 /*! TEF - Transmit Error Flag
  *  0b0..No underrun
- *  0b1..Underrun
  *  0b0..No effect
+ *  0b1..Underrun
  *  0b1..Clear the flag
  */
 #define LPSPI_SR_TEF(x)                          (((uint32_t)(((uint32_t)(x)) << LPSPI_SR_TEF_SHIFT)) & LPSPI_SR_TEF_MASK)
@@ -330,8 +329,8 @@ typedef struct {
 #define LPSPI_SR_REF_SHIFT                       (12U)
 /*! REF - Receive Error Flag
  *  0b0..No overflow
- *  0b1..Overflow
  *  0b0..No effect
+ *  0b1..Overflow
  *  0b1..Clear the flag
  */
 #define LPSPI_SR_REF(x)                          (((uint32_t)(((uint32_t)(x)) << LPSPI_SR_REF_SHIFT)) & LPSPI_SR_REF_MASK)
@@ -340,8 +339,8 @@ typedef struct {
 #define LPSPI_SR_DMF_SHIFT                       (13U)
 /*! DMF - Data Match Flag
  *  0b0..No match
- *  0b1..Match
  *  0b0..No effect
+ *  0b1..Match
  *  0b1..Clear the flag
  */
 #define LPSPI_SR_DMF(x)                          (((uint32_t)(((uint32_t)(x)) << LPSPI_SR_DMF_SHIFT)) & LPSPI_SR_DMF_MASK)

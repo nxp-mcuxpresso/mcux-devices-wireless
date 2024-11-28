@@ -2,15 +2,15 @@
 ** ###################################################################
 **     Processor:           KW47B42ZB3AFTA_cm33_core0
 **     Compiler:            GNU C Compiler
-**     Reference manual:    Rev. 6, 05/22/2022
-**     Version:             rev. 1.0, 2023-05-20
-**     Build:               b230606
+**     Reference manual:    Rev. 1, 2024-10-13
+**     Version:             rev. 1.0, 2024-10-13
+**     Build:               b241128
 **
 **     Abstract:
 **         Linker file for the GNU C Compiler
 **
 **     Copyright 2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2023 NXP
+**     Copyright 2016-2024 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -26,6 +26,7 @@ ENTRY(Reset_Handler)
 
 HEAP_SIZE  = DEFINED(__heap_size__)  ? __heap_size__  : 0x0800;
 STACK_SIZE = DEFINED(__stack_size__) ? __stack_size__ : 0x0800;
+RPMSG_SHMEM_SIZE = DEFINED(__use_shmem__) ? 0x1800 : 0;
 
 /* Specify the memory areas */
 MEMORY
@@ -33,12 +34,32 @@ MEMORY
   m_interrupts          (RX)  : ORIGIN = 0x00000000, LENGTH = 0x00000400
   m_text                (RX)  : ORIGIN = 0x00000400, LENGTH = 0x001FFC00
   m_data0               (RW)  : ORIGIN = 0x04000000, LENGTH = 0x00008000
-  m_data1               (RW)  : ORIGIN = 0x20000000, LENGTH = 0x0003A000
+  m_data1               (RW)  : ORIGIN = 0x20000000, LENGTH = 0x00038000
+  rpmsg_sh_mem          (RW)  : ORIGIN = 0x489C8800, LENGTH = RPMSG_SHMEM_SIZE
+  m_core1_image         (RX)  : ORIGIN = 0x48800000, LENGTH = 0x00040000
 }
 
 /* Define output sections */
 SECTIONS
 {
+   /* section for storing the secondary core image */
+   .core1_code :
+   {
+      . = ALIGN(4) ;
+     KEEP (*(.core1_code))
+     *(.core1_code*)
+     . = ALIGN(4) ;
+   } > m_core1_image
+
+  /* NOINIT section for rpmsg_sh_mem */
+  .noinit_rpmsg_sh_mem (NOLOAD) : ALIGN(4)
+  {
+     __RPMSG_SH_MEM_START__ = .;
+     *(.noinit.$rpmsg_sh_mem*)
+     . = ALIGN(4) ;
+     __RPMSG_SH_MEM_END__ = .;
+  } > rpmsg_sh_mem
+
   /* The startup code goes first into internal flash */
   .interrupts :
   {

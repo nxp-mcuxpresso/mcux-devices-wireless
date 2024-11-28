@@ -2,15 +2,15 @@
 ** ###################################################################
 **     Processor:           KW47B42ZB3AFTA_cm33_core0
 **     Compiler:            IAR ANSI C/C++ Compiler for ARM
-**     Reference manual:    Rev. 6, 05/22/2022
-**     Version:             rev. 1.0, 2023-05-20
-**     Build:               b230606
+**     Reference manual:    Rev. 1, 2024-10-13
+**     Version:             rev. 1.0, 2024-10-13
+**     Build:               b241128
 **
 **     Abstract:
 **         Linker file for the IAR ANSI C/C++ Compiler for ARM
 **
 **     Copyright 2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2023 NXP
+**     Copyright 2016-2024 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -40,10 +40,10 @@ define symbol m_text_start                     = 0x04000400;
 define symbol m_text_end                       = 0x04007FFF;
 
 define symbol m_data_start                     = 0x20000000;
-define symbol m_data_end                       = 0x20039FFF - __size_cstack__;
+define symbol m_data_end                       = 0x20037FFF - __size_cstack__;
 
-define symbol m_stack_start                    = 0x2003A000 - __size_cstack__;
-define symbol m_stack_end                      = 0x20039FFF;
+define symbol m_stack_start                    = 0x20038000 - __size_cstack__;
+define symbol m_stack_end                      = 0x20037FFF;
 
 define memory mem with size = 4G;
 

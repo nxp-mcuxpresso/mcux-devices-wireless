@@ -1,7 +1,7 @@
 /*
 ** ###################################################################
-**     Version:             rev. 1.0, 2023-05-20
-**     Build:               b240819
+**     Version:             rev. 1.0, 2024-10-13
+**     Build:               b241128
 **
 **     Abstract:
 **         Chip specific module features.
@@ -14,8 +14,8 @@
 **     mail:                 support@nxp.com
 **
 **     Revisions:
-**     - rev. 1.0 (2023-05-20)
-**         Initial version.
+**     - rev. 1.0 (2024-10-13)
+**         Rev. 1, 2024-10-13
 **
 ** ###################################################################
 */
@@ -225,6 +225,8 @@
 #define FSL_FEATURE_FLEXCAN_HAS_ENHANCED_RX_FIFO_FILTER_MAX_NUMBER (32)
 /* @brief Does not support Supervisor Mode (bitfield MCR[SUPV]. */
 #define FSL_FEATURE_FLEXCAN_HAS_NO_SUPV_SUPPORT (1)
+/* @brief Support payload endianness selection (bitfield CTRL2[PES]). */
+#define FSL_FEATURE_FLEXCAN_HAS_ENDIANNESS_SELECTION (1)
 
 /* CCM32K module features */
 
@@ -250,7 +252,7 @@
 /* @brief Has DIER register */
 #define FSL_FEATURE_CMC_HAS_DIER_REG (1)
 /* @brief Has system clock generation reset (register bit SCG[SRIE]) */
-#define FSL_FEATURE_CMC_HAS_SRIE_SCG_BIT (1)
+#define FSL_FEATURE_CMC_HAS_SRIE_SCG_BIT (0)
 
 /* EDMA module features */
 

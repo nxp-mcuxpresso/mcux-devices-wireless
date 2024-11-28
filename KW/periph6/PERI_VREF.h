@@ -19,8 +19,8 @@
 **                          KW47Z420B2AFTA
 **                          KW47Z420B3AFTA
 **
-**     Version:             rev. 1.0, 2023-05-20
-**     Build:               b240821
+**     Version:             rev. 1.0, 2024-10-13
+**     Build:               b241128
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for VREF
@@ -33,8 +33,8 @@
 **     mail:                 support@nxp.com
 **
 **     Revisions:
-**     - rev. 1.0 (2023-05-20)
-**         Initial version.
+**     - rev. 1.0 (2024-10-13)
+**         Rev. 1, 2024-10-13
 **
 ** ###################################################################
 */
@@ -42,7 +42,7 @@
 /*!
  * @file VREF.h
  * @version 1.0
- * @date 2023-05-20
+ * @date 2024-10-13
  * @brief CMSIS Peripheral Access Layer for VREF
  *
  * CMSIS Peripheral Access Layer for VREF
@@ -216,6 +216,22 @@ typedef struct {
  *  0b1..Enables
  */
 #define VREF_CSR_REGEN(x)                        (((uint32_t)(((uint32_t)(x)) << VREF_CSR_REGEN_SHIFT)) & VREF_CSR_REGEN_MASK)
+
+#define VREF_CSR_REFCHSELN_EN_MASK               (0x40U)
+#define VREF_CSR_REFCHSELN_EN_SHIFT              (6U)
+/*! REFCHSELN_EN - Reference Channel Select Negative Enable
+ *  0b0..Disables
+ *  0b1..Enables
+ */
+#define VREF_CSR_REFCHSELN_EN(x)                 (((uint32_t)(((uint32_t)(x)) << VREF_CSR_REFCHSELN_EN_SHIFT)) & VREF_CSR_REFCHSELN_EN_MASK)
+
+#define VREF_CSR_REFCHSELP_EN_MASK               (0x80U)
+#define VREF_CSR_REFCHSELP_EN_SHIFT              (7U)
+/*! REFCHSELP_EN - Reference Channel Select Positive Enable
+ *  0b0..Disables
+ *  0b1..Enables
+ */
+#define VREF_CSR_REFCHSELP_EN(x)                 (((uint32_t)(((uint32_t)(x)) << VREF_CSR_REFCHSELP_EN_SHIFT)) & VREF_CSR_REFCHSELP_EN_MASK)
 
 #define VREF_CSR_HI_PWR_LV_MASK                  (0x800U)
 #define VREF_CSR_HI_PWR_LV_SHIFT                 (11U)

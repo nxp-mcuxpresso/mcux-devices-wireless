@@ -19,8 +19,8 @@
 **                          KW47Z420B2AFTA
 **                          KW47Z420B3AFTA
 **
-**     Version:             rev. 1.0, 2023-05-20
-**     Build:               b240821
+**     Version:             rev. 1.0, 2024-10-13
+**     Build:               b241128
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for SPC
@@ -33,8 +33,8 @@
 **     mail:                 support@nxp.com
 **
 **     Revisions:
-**     - rev. 1.0 (2023-05-20)
-**         Initial version.
+**     - rev. 1.0 (2024-10-13)
+**         Rev. 1, 2024-10-13
 **
 ** ###################################################################
 */
@@ -42,7 +42,7 @@
 /*!
  * @file SPC.h
  * @version 1.0
- * @date 2023-05-20
+ * @date 2024-10-13
  * @brief CMSIS Peripheral Access Layer for SPC
  *
  * CMSIS Peripheral Access Layer for SPC
@@ -190,7 +190,6 @@ typedef struct {
 #define SPC_VERID_FEATURE_SHIFT                  (0U)
 /*! FEATURE - Feature Specification Number
  *  0b0000000000000000..Standard features
- *  *..
  */
 #define SPC_VERID_FEATURE(x)                     (((uint32_t)(((uint32_t)(x)) << SPC_VERID_FEATURE_SHIFT)) & SPC_VERID_FEATURE_MASK)
 
@@ -220,8 +219,8 @@ typedef struct {
 #define SPC_SC_SPC_LP_REQ_SHIFT                  (1U)
 /*! SPC_LP_REQ - SPC Power Mode Configuration Status Flag
  *  0b0..SPC is in Active mode; the ACTIVE_CFG register has control
- *  0b1..All power domains requested low-power mode; SPC entered a low-power state; power-mode configuration based on the LP_CFG register
  *  0b0..No effect
+ *  0b1..All power domains requested low-power mode; SPC entered a low-power state; power-mode configuration based on the LP_CFG register
  *  0b1..Clear the flag
  */
 #define SPC_SC_SPC_LP_REQ(x)                     (((uint32_t)(((uint32_t)(x)) << SPC_SC_SPC_LP_REQ_SHIFT)) & SPC_SC_SPC_LP_REQ_MASK)
@@ -473,6 +472,7 @@ typedef struct {
 #define SPC_ACTIVE_CFG_CORELDO_VDD_LVL_MASK      (0xCU)
 #define SPC_ACTIVE_CFG_CORELDO_VDD_LVL_SHIFT     (2U)
 /*! CORELDO_VDD_LVL - LDO_CORE VDD Regulator Voltage Level
+ *  0b00..
  *  0b00..Regulate to under voltage (0.95 V)
  *  0b01..Regulate to mid voltage (1.0 V)
  *  0b10..Regulate to normal voltage (1.1 V)
@@ -501,7 +501,6 @@ typedef struct {
 /*! DCDC_VDD_DS - DCDC VDD Drive Strength
  *  0b01..Low
  *  0b10..Normal
- *  *..
  */
 #define SPC_ACTIVE_CFG_DCDC_VDD_DS(x)            (((uint32_t)(((uint32_t)(x)) << SPC_ACTIVE_CFG_DCDC_VDD_DS_SHIFT)) & SPC_ACTIVE_CFG_DCDC_VDD_DS_MASK)
 
@@ -772,7 +771,6 @@ typedef struct {
 /*! DCDC_VDD_DS - DCDC VDD Drive Strength
  *  0b01..Low
  *  0b10..Normal
- *  *..
  */
 #define SPC_HP_CFG_DCDC_VDD_DS(x)                (((uint32_t)(((uint32_t)(x)) << SPC_HP_CFG_DCDC_VDD_DS_SHIFT)) & SPC_HP_CFG_DCDC_VDD_DS_MASK)
 
@@ -886,8 +884,8 @@ typedef struct {
 #define SPC_VD_STAT_COREVDD_LVDF_SHIFT           (0U)
 /*! COREVDD_LVDF - Core Low-Voltage Detect Flag
  *  0b0..Event not detected
- *  0b1..Event detected
  *  0b0..No effect
+ *  0b1..Event detected
  *  0b1..Clear the flag
  */
 #define SPC_VD_STAT_COREVDD_LVDF(x)              (((uint32_t)(((uint32_t)(x)) << SPC_VD_STAT_COREVDD_LVDF_SHIFT)) & SPC_VD_STAT_COREVDD_LVDF_MASK)
@@ -896,8 +894,8 @@ typedef struct {
 #define SPC_VD_STAT_SYSVDD_LVDF_SHIFT            (1U)
 /*! SYSVDD_LVDF - System Low-Voltage Detect Flag
  *  0b0..Event not detected
- *  0b1..Event detected
  *  0b0..No effect
+ *  0b1..Event detected
  *  0b1..Clear the flag
  */
 #define SPC_VD_STAT_SYSVDD_LVDF(x)               (((uint32_t)(((uint32_t)(x)) << SPC_VD_STAT_SYSVDD_LVDF_SHIFT)) & SPC_VD_STAT_SYSVDD_LVDF_MASK)
@@ -906,8 +904,8 @@ typedef struct {
 #define SPC_VD_STAT_IOVDD_LVDF_SHIFT             (2U)
 /*! IOVDD_LVDF - IO VDD LVD Flag
  *  0b0..Event not detected
- *  0b1..Event detected
  *  0b0..No effect
+ *  0b1..Event detected
  *  0b1..Clear the flag
  */
 #define SPC_VD_STAT_IOVDD_LVDF(x)                (((uint32_t)(((uint32_t)(x)) << SPC_VD_STAT_IOVDD_LVDF_SHIFT)) & SPC_VD_STAT_IOVDD_LVDF_MASK)
@@ -916,8 +914,8 @@ typedef struct {
 #define SPC_VD_STAT_COREVDD_HVDF_SHIFT           (4U)
 /*! COREVDD_HVDF - Core VDD HVD Flag
  *  0b0..Event not detected
- *  0b1..Event detected
  *  0b0..No effect
+ *  0b1..Event detected
  *  0b1..Clear the flag
  */
 #define SPC_VD_STAT_COREVDD_HVDF(x)              (((uint32_t)(((uint32_t)(x)) << SPC_VD_STAT_COREVDD_HVDF_SHIFT)) & SPC_VD_STAT_COREVDD_HVDF_MASK)
@@ -926,8 +924,8 @@ typedef struct {
 #define SPC_VD_STAT_SYSVDD_HVDF_SHIFT            (5U)
 /*! SYSVDD_HVDF - System HVD Flag
  *  0b0..Event not detected
- *  0b1..Event detected
  *  0b0..No effect
+ *  0b1..Event detected
  *  0b1..Clear the flag
  */
 #define SPC_VD_STAT_SYSVDD_HVDF(x)               (((uint32_t)(((uint32_t)(x)) << SPC_VD_STAT_SYSVDD_HVDF_SHIFT)) & SPC_VD_STAT_SYSVDD_HVDF_MASK)
@@ -936,8 +934,8 @@ typedef struct {
 #define SPC_VD_STAT_IOVDD_HVDF_SHIFT             (6U)
 /*! IOVDD_HVDF - IO VDD HVD Flag
  *  0b0..Event not detected
- *  0b1..Event detected
  *  0b0..No effect
+ *  0b1..Event detected
  *  0b1..Clear the flag
  */
 #define SPC_VD_STAT_IOVDD_HVDF(x)                (((uint32_t)(((uint32_t)(x)) << SPC_VD_STAT_IOVDD_HVDF_SHIFT)) & SPC_VD_STAT_IOVDD_HVDF_MASK)
@@ -1245,8 +1243,8 @@ typedef struct {
 #define SPC_DCDC_BURST_CFG_BURST_ACK_SHIFT       (3U)
 /*! BURST_ACK - Burst Acknowledge Flag
  *  0b0..Did not complete
- *  0b1..Completed
  *  0b0..No effect
+ *  0b1..Completed
  *  0b1..Clear the flag
  */
 #define SPC_DCDC_BURST_CFG_BURST_ACK(x)          (((uint32_t)(((uint32_t)(x)) << SPC_DCDC_BURST_CFG_BURST_ACK_SHIFT)) & SPC_DCDC_BURST_CFG_BURST_ACK_MASK)

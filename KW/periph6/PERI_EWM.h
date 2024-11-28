@@ -19,8 +19,8 @@
 **                          KW47Z420B2AFTA
 **                          KW47Z420B3AFTA
 **
-**     Version:             rev. 1.0, 2023-05-20
-**     Build:               b240821
+**     Version:             rev. 1.0, 2024-10-13
+**     Build:               b241128
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for EWM
@@ -33,8 +33,8 @@
 **     mail:                 support@nxp.com
 **
 **     Revisions:
-**     - rev. 1.0 (2023-05-20)
-**         Initial version.
+**     - rev. 1.0 (2024-10-13)
+**         Rev. 1, 2024-10-13
 **
 ** ###################################################################
 */
@@ -42,7 +42,7 @@
 /*!
  * @file EWM.h
  * @version 1.0
- * @date 2023-05-20
+ * @date 2024-10-13
  * @brief CMSIS Peripheral Access Layer for EWM
  *
  * CMSIS Peripheral Access Layer for EWM
@@ -132,7 +132,7 @@
 /** EWM - Register Layout Typedef */
 typedef struct {
   __IO uint8_t CTRL;                               /**< Control, offset: 0x0 */
-  __O  uint8_t SERV;                               /**< Service, offset: 0x1 */
+  __IO uint8_t SERV;                               /**< Service, offset: 0x1 */
   __IO uint8_t CMPL;                               /**< Compare Low, offset: 0x2 */
   __IO uint8_t CMPH;                               /**< Compare High, offset: 0x3 */
        uint8_t RESERVED_0[1];
@@ -178,8 +178,8 @@ typedef struct {
 #define EWM_CTRL_INTEN_MASK                      (0x8U)
 #define EWM_CTRL_INTEN_SHIFT                     (3U)
 /*! INTEN - Interrupt Enable
- *  0b1..Generates interrupt requests
  *  0b0..Deasserts interrupt requests
+ *  0b1..Generates interrupt requests
  */
 #define EWM_CTRL_INTEN(x)                        (((uint8_t)(((uint8_t)(x)) << EWM_CTRL_INTEN_SHIFT)) & EWM_CTRL_INTEN_MASK)
 /*! @} */

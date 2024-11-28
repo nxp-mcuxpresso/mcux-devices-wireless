@@ -19,8 +19,8 @@
 **                          KW47Z420B2AFTA
 **                          KW47Z420B3AFTA
 **
-**     Version:             rev. 1.0, 2023-05-20
-**     Build:               b240821
+**     Version:             rev. 1.0, 2024-10-13
+**     Build:               b241128
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for RBME
@@ -33,8 +33,8 @@
 **     mail:                 support@nxp.com
 **
 **     Revisions:
-**     - rev. 1.0 (2023-05-20)
-**         Initial version.
+**     - rev. 1.0 (2024-10-13)
+**         Rev. 1, 2024-10-13
 **
 ** ###################################################################
 */
@@ -42,7 +42,7 @@
 /*!
  * @file RBME.h
  * @version 1.0
- * @date 2023-05-20
+ * @date 2024-10-13
  * @brief CMSIS Peripheral Access Layer for RBME
  *
  * CMSIS Peripheral Access Layer for RBME
@@ -411,8 +411,8 @@ typedef struct {
 #define RBME_FEC_CFG1_FECOV_EN_MASK              (0x4U)
 #define RBME_FEC_CFG1_FECOV_EN_SHIFT             (2U)
 /*! FECOV_EN - Enable dynamic override of FEC
- *  0b1..The override of FEC is only used in Bluetooth LE LR cases, dynamically depending on the LR AA detected
  *  0b0..Disable FEC override
+ *  0b1..The override of FEC is only used in Bluetooth LE LR cases, dynamically depending on the LR AA detected
  */
 #define RBME_FEC_CFG1_FECOV_EN(x)                (((uint32_t)(((uint32_t)(x)) << RBME_FEC_CFG1_FECOV_EN_SHIFT)) & RBME_FEC_CFG1_FECOV_EN_MASK)
 

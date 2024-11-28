@@ -2,15 +2,15 @@
 ** ###################################################################
 **     Processor:           KW47B42ZB3AFTA_cm33_core0
 **     Compiler:            GNU C Compiler
-**     Reference manual:    Rev. 6, 05/22/2022
-**     Version:             rev. 1.0, 2023-05-20
-**     Build:               b230606
+**     Reference manual:    Rev. 1, 2024-10-13
+**     Version:             rev. 1.0, 2024-10-13
+**     Build:               b241128
 **
 **     Abstract:
 **         Linker file for the GNU C Compiler
 **
 **     Copyright 2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2023 NXP
+**     Copyright 2016-2024 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -32,7 +32,7 @@ MEMORY
 {
   m_interrupts          (RX)  : ORIGIN = 0x04000000, LENGTH = 0x00000400
   m_text                (RX)  : ORIGIN = 0x04000400, LENGTH = 0x00007C00
-  m_data                (RW)  : ORIGIN = 0x20000000, LENGTH = 0x0003A000
+  m_data                (RW)  : ORIGIN = 0x20000000, LENGTH = 0x00038000
 }
 
 /* Define output sections */

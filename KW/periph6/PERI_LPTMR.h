@@ -19,8 +19,8 @@
 **                          KW47Z420B2AFTA
 **                          KW47Z420B3AFTA
 **
-**     Version:             rev. 1.0, 2023-05-20
-**     Build:               b240821
+**     Version:             rev. 1.0, 2024-10-13
+**     Build:               b241128
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for LPTMR
@@ -33,8 +33,8 @@
 **     mail:                 support@nxp.com
 **
 **     Revisions:
-**     - rev. 1.0 (2023-05-20)
-**         Initial version.
+**     - rev. 1.0 (2024-10-13)
+**         Rev. 1, 2024-10-13
 **
 ** ###################################################################
 */
@@ -42,7 +42,7 @@
 /*!
  * @file LPTMR.h
  * @version 1.0
- * @date 2023-05-20
+ * @date 2024-10-13
  * @brief CMSIS Peripheral Access Layer for LPTMR
  *
  * CMSIS Peripheral Access Layer for LPTMR
@@ -203,8 +203,8 @@ typedef struct {
 #define LPTMR_CSR_TCF_SHIFT                      (7U)
 /*! TCF - Timer Compare Flag
  *  0b0..CNR != (CMR + 1)
- *  0b1..CNR = (CMR + 1)
  *  0b0..No effect
+ *  0b1..CNR = (CMR + 1)
  *  0b1..Clear the flag
  */
 #define LPTMR_CSR_TCF(x)                         (((uint32_t)(((uint32_t)(x)) << LPTMR_CSR_TCF_SHIFT)) & LPTMR_CSR_TCF_MASK)

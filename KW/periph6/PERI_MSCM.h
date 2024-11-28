@@ -19,8 +19,8 @@
 **                          KW47Z420B2AFTA
 **                          KW47Z420B3AFTA
 **
-**     Version:             rev. 1.0, 2023-05-20
-**     Build:               b240821
+**     Version:             rev. 1.0, 2024-10-13
+**     Build:               b241128
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for MSCM
@@ -33,8 +33,8 @@
 **     mail:                 support@nxp.com
 **
 **     Revisions:
-**     - rev. 1.0 (2023-05-20)
-**         Initial version.
+**     - rev. 1.0 (2024-10-13)
+**         Rev. 1, 2024-10-13
 **
 ** ###################################################################
 */
@@ -42,7 +42,7 @@
 /*!
  * @file MSCM.h
  * @version 1.0
- * @date 2023-05-20
+ * @date 2024-10-13
  * @brief CMSIS Peripheral Access Layer for MSCM
  *
  * CMSIS Peripheral Access Layer for MSCM
@@ -1173,8 +1173,8 @@ typedef struct {
 #define MSCM_SID_RAMSZ_MASK                      (0xE000U)
 #define MSCM_SID_RAMSZ_SHIFT                     (13U)
 /*! RAMSZ - RAM Size
- *  0b111..128 KB
  *  0b000..96 KB
+ *  0b111..128 KB
  */
 #define MSCM_SID_RAMSZ(x)                        (((uint32_t)(((uint32_t)(x)) << MSCM_SID_RAMSZ_SHIFT)) & MSCM_SID_RAMSZ_MASK)
 

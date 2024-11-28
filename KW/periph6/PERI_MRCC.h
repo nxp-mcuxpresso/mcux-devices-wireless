@@ -19,8 +19,8 @@
 **                          KW47Z420B2AFTA
 **                          KW47Z420B3AFTA
 **
-**     Version:             rev. 1.0, 2023-05-20
-**     Build:               b240821
+**     Version:             rev. 1.0, 2024-10-13
+**     Build:               b241128
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for MRCC
@@ -33,8 +33,8 @@
 **     mail:                 support@nxp.com
 **
 **     Revisions:
-**     - rev. 1.0 (2023-05-20)
-**         Initial version.
+**     - rev. 1.0 (2024-10-13)
+**         Rev. 1, 2024-10-13
 **
 ** ###################################################################
 */
@@ -42,7 +42,7 @@
 /*!
  * @file MRCC.h
  * @version 1.0
- * @date 2023-05-20
+ * @date 2024-10-13
  * @brief CMSIS Peripheral Access Layer for MRCC
  *
  * CMSIS Peripheral Access Layer for MRCC
@@ -398,9 +398,9 @@ typedef struct {
 #define MRCC_MRCC_LPIT0_MUX_MASK                 (0x70U)
 #define MRCC_MRCC_LPIT0_MUX_SHIFT                (4U)
 /*! MUX - Functional Clock Mux Select
- *  0b100..SOSC-CLK
- *  0b011..FRO-192M
  *  0b010..FRO-6M
+ *  0b011..FRO-192M
+ *  0b100..SOSC-CLK
  */
 #define MRCC_MRCC_LPIT0_MUX(x)                   (((uint32_t)(((uint32_t)(x)) << MRCC_MRCC_LPIT0_MUX_SHIFT)) & MRCC_MRCC_LPIT0_MUX_MASK)
 
@@ -460,10 +460,10 @@ typedef struct {
 #define MRCC_MRCC_TPM0_MUX_MASK                  (0x70U)
 #define MRCC_MRCC_TPM0_MUX_SHIFT                 (4U)
 /*! MUX - Functional Clock Mux Select
- *  0b101..32K-CLK
- *  0b100..SOSC-CLK
- *  0b011..FRO-192M
  *  0b010..FRO-6M
+ *  0b011..FRO-192M
+ *  0b100..SOSC-CLK
+ *  0b101..32K-CLK
  */
 #define MRCC_MRCC_TPM0_MUX(x)                    (((uint32_t)(((uint32_t)(x)) << MRCC_MRCC_TPM0_MUX_SHIFT)) & MRCC_MRCC_TPM0_MUX_MASK)
 
@@ -507,10 +507,10 @@ typedef struct {
 #define MRCC_MRCC_TPM1_MUX_MASK                  (0x70U)
 #define MRCC_MRCC_TPM1_MUX_SHIFT                 (4U)
 /*! MUX - Functional Clock Mux Select
- *  0b101..32K-CLK
- *  0b100..SOSC-CLK
- *  0b011..FRO-192M
  *  0b010..FRO-6M
+ *  0b011..FRO-192M
+ *  0b100..SOSC-CLK
+ *  0b101..32K-CLK
  */
 #define MRCC_MRCC_TPM1_MUX(x)                    (((uint32_t)(((uint32_t)(x)) << MRCC_MRCC_TPM1_MUX_SHIFT)) & MRCC_MRCC_TPM1_MUX_MASK)
 
@@ -554,9 +554,9 @@ typedef struct {
 #define MRCC_MRCC_LPI2C0_MUX_MASK                (0x70U)
 #define MRCC_MRCC_LPI2C0_MUX_SHIFT               (4U)
 /*! MUX - Functional Clock Mux Select
- *  0b100..SOSC-CLK
- *  0b011..FRO-192M
  *  0b010..FRO-6M
+ *  0b011..FRO-192M
+ *  0b100..SOSC-CLK
  */
 #define MRCC_MRCC_LPI2C0_MUX(x)                  (((uint32_t)(((uint32_t)(x)) << MRCC_MRCC_LPI2C0_MUX_SHIFT)) & MRCC_MRCC_LPI2C0_MUX_MASK)
 
@@ -600,9 +600,9 @@ typedef struct {
 #define MRCC_MRCC_LPI2C1_MUX_MASK                (0x70U)
 #define MRCC_MRCC_LPI2C1_MUX_SHIFT               (4U)
 /*! MUX - Functional Clock Mux Select
- *  0b100..SOSC-CLK
- *  0b011..FRO-192M
  *  0b010..FRO-6M
+ *  0b011..FRO-192M
+ *  0b100..SOSC-CLK
  */
 #define MRCC_MRCC_LPI2C1_MUX(x)                  (((uint32_t)(((uint32_t)(x)) << MRCC_MRCC_LPI2C1_MUX_SHIFT)) & MRCC_MRCC_LPI2C1_MUX_MASK)
 
@@ -646,9 +646,9 @@ typedef struct {
 #define MRCC_MRCC_I3C0_MUX_MASK                  (0x70U)
 #define MRCC_MRCC_I3C0_MUX_SHIFT                 (4U)
 /*! MUX - Functional Clock Mux Select
- *  0b100..SOSC-CLK
- *  0b011..FRO-192M
  *  0b010..FRO-6M
+ *  0b011..FRO-192M
+ *  0b100..SOSC-CLK
  */
 #define MRCC_MRCC_I3C0_MUX(x)                    (((uint32_t)(((uint32_t)(x)) << MRCC_MRCC_I3C0_MUX_SHIFT)) & MRCC_MRCC_I3C0_MUX_MASK)
 
@@ -692,9 +692,9 @@ typedef struct {
 #define MRCC_MRCC_LPSPI0_MUX_MASK                (0x70U)
 #define MRCC_MRCC_LPSPI0_MUX_SHIFT               (4U)
 /*! MUX - Functional Clock Mux Select
- *  0b100..SOSC-CLK
- *  0b011..FRO-192M
  *  0b010..FRO-6M
+ *  0b011..FRO-192M
+ *  0b100..SOSC-CLK
  */
 #define MRCC_MRCC_LPSPI0_MUX(x)                  (((uint32_t)(((uint32_t)(x)) << MRCC_MRCC_LPSPI0_MUX_SHIFT)) & MRCC_MRCC_LPSPI0_MUX_MASK)
 
@@ -738,9 +738,9 @@ typedef struct {
 #define MRCC_MRCC_LPSPI1_MUX_MASK                (0x70U)
 #define MRCC_MRCC_LPSPI1_MUX_SHIFT               (4U)
 /*! MUX - Functional Clock Mux Select
- *  0b100..SOSC-CLK
- *  0b011..FRO-192M
  *  0b010..FRO-6M
+ *  0b011..FRO-192M
+ *  0b100..SOSC-CLK
  */
 #define MRCC_MRCC_LPSPI1_MUX(x)                  (((uint32_t)(((uint32_t)(x)) << MRCC_MRCC_LPSPI1_MUX_SHIFT)) & MRCC_MRCC_LPSPI1_MUX_MASK)
 
@@ -784,10 +784,10 @@ typedef struct {
 #define MRCC_MRCC_LPUART0_MUX_MASK               (0x70U)
 #define MRCC_MRCC_LPUART0_MUX_SHIFT              (4U)
 /*! MUX - Functional Clock Mux Select
- *  0b101..32K-CLK
- *  0b100..SOSC-CLK
- *  0b011..FRO-192M
  *  0b010..FRO-6M
+ *  0b011..FRO-192M
+ *  0b100..SOSC-CLK
+ *  0b101..32K-CLK
  */
 #define MRCC_MRCC_LPUART0_MUX(x)                 (((uint32_t)(((uint32_t)(x)) << MRCC_MRCC_LPUART0_MUX_SHIFT)) & MRCC_MRCC_LPUART0_MUX_MASK)
 
@@ -831,10 +831,10 @@ typedef struct {
 #define MRCC_MRCC_LPUART1_MUX_MASK               (0x70U)
 #define MRCC_MRCC_LPUART1_MUX_SHIFT              (4U)
 /*! MUX - Functional Clock Mux Select
- *  0b101..32K-CLK
- *  0b100..SOSC-CLK
- *  0b011..FRO-192M
  *  0b010..FRO-6M
+ *  0b011..FRO-192M
+ *  0b100..SOSC-CLK
+ *  0b101..32K-CLK
  */
 #define MRCC_MRCC_LPUART1_MUX(x)                 (((uint32_t)(((uint32_t)(x)) << MRCC_MRCC_LPUART1_MUX_SHIFT)) & MRCC_MRCC_LPUART1_MUX_MASK)
 
@@ -878,9 +878,9 @@ typedef struct {
 #define MRCC_MRCC_FLEXIO0_MUX_MASK               (0x70U)
 #define MRCC_MRCC_FLEXIO0_MUX_SHIFT              (4U)
 /*! MUX - Functional Clock Mux Select
- *  0b100..SOSC-CLK
- *  0b011..FRO-192M
  *  0b010..FRO-6M
+ *  0b011..FRO-192M
+ *  0b100..SOSC-CLK
  */
 #define MRCC_MRCC_FLEXIO0_MUX(x)                 (((uint32_t)(((uint32_t)(x)) << MRCC_MRCC_FLEXIO0_MUX_SHIFT)) & MRCC_MRCC_FLEXIO0_MUX_MASK)
 
@@ -924,8 +924,8 @@ typedef struct {
 #define MRCC_MRCC_CAN0_MUX_MASK                  (0x70U)
 #define MRCC_MRCC_CAN0_MUX_SHIFT                 (4U)
 /*! MUX - Functional Clock Mux Select
- *  0b100..SOSC-CLK
  *  0b011..FRO-192M
+ *  0b100..SOSC-CLK
  */
 #define MRCC_MRCC_CAN0_MUX(x)                    (((uint32_t)(((uint32_t)(x)) << MRCC_MRCC_CAN0_MUX_SHIFT)) & MRCC_MRCC_CAN0_MUX_MASK)
 
@@ -1129,9 +1129,9 @@ typedef struct {
 #define MRCC_MRCC_LPADC0_MUX_MASK                (0x70U)
 #define MRCC_MRCC_LPADC0_MUX_SHIFT               (4U)
 /*! MUX - Functional Clock Mux Select
- *  0b100..SOSC-CLK
- *  0b011..FRO-192M
  *  0b010..FRO-6M
+ *  0b011..FRO-192M
+ *  0b100..SOSC-CLK
  */
 #define MRCC_MRCC_LPADC0_MUX(x)                  (((uint32_t)(((uint32_t)(x)) << MRCC_MRCC_LPADC0_MUX_SHIFT)) & MRCC_MRCC_LPADC0_MUX_MASK)
 
@@ -1287,8 +1287,8 @@ typedef struct {
 #define MRCC_MRCC_CAN1_MUX_MASK                  (0x70U)
 #define MRCC_MRCC_CAN1_MUX_SHIFT                 (4U)
 /*! MUX - Functional Clock Mux Select
- *  0b100..SOSC-CLK
  *  0b011..FRO-192M
+ *  0b100..SOSC-CLK
  */
 #define MRCC_MRCC_CAN1_MUX(x)                    (((uint32_t)(((uint32_t)(x)) << MRCC_MRCC_CAN1_MUX_SHIFT)) & MRCC_MRCC_CAN1_MUX_MASK)
 
