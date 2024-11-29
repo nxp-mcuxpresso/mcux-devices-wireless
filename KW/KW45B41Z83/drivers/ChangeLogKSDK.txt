@@ -20,7 +20,7 @@
     - Initial version.
 
 @section romapi ROMAPI
-  The current ROMAPI driver version is 1.1.0.
+  The current ROMAPI driver version is 1.2.0.
 
   - 1.2.0
     - Improvements
