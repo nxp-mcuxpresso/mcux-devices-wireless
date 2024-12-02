@@ -9,6 +9,10 @@ menu "Device specific drivers configuration"
          bool "Use driver clock"
          default y
 
+    config MCUX_COMPONENT_driver.i2s_bridge
+         bool "Use driver i2s_bridge"
+         default y
+
     config MCUX_COMPONENT_driver.inputmux_connections
          bool "Use driver inputmux_connections"
          default y
