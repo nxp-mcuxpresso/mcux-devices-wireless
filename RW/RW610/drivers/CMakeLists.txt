@@ -9,6 +9,12 @@ if (CONFIG_MCUX_COMPONENT_driver.clock)
     mcux_add_include( INCLUDES . )
 endif()
 
+if (CONFIG_MCUX_COMPONENT_driver.i2s_bridge)
+    mcux_component_version(2.0.0)
+    mcux_add_source( SOURCES fsl_i2s_bridge.c fsl_i2s_bridge.h )
+    mcux_add_include( INCLUDES . )
+endif()
+
 if (CONFIG_MCUX_COMPONENT_driver.inputmux_connections)
     mcux_add_source( SOURCES fsl_inputmux_connections.h )
     mcux_add_include( INCLUDES . )
