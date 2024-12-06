@@ -16,6 +16,7 @@ if (CONFIG_MCUX_COMPONENT_driver.i2s_bridge)
 endif()
 
 if (CONFIG_MCUX_COMPONENT_driver.inputmux_connections)
+    mcux_component_version(2.0.1)
     mcux_add_source( SOURCES fsl_inputmux_connections.h )
     mcux_add_include( INCLUDES . )
 endif()
@@ -33,6 +34,7 @@ if (CONFIG_MCUX_COMPONENT_driver.iped_rw61x)
 endif()
 
 if (CONFIG_MCUX_COMPONENT_driver.memory)
+    mcux_component_version(2.0.0)
     mcux_add_source( SOURCES fsl_memory.h )
     mcux_add_include( INCLUDES . )
 endif()
@@ -56,6 +58,7 @@ if (CONFIG_MCUX_COMPONENT_driver.reset)
 endif()
 
 if (CONFIG_MCUX_COMPONENT_driver.romapi)
+    mcux_component_version(3.0.0)
     mcux_add_source( SOURCES ./romapi/bootloader/fsl_romapi.c
                              ./romapi/bootloader/fsl_romapi.h 
                              ./romapi/flexspi/fsl_romapi_flexspi.c
