@@ -1682,7 +1682,7 @@ typedef enum IRQn {
  * @{
  */
 
-#ifdef ((KW47B42Z83_cm33_core0_H_) || (KW47B42Z96_cm33_core0_H_) || (KW47B42Z97_cm33_core0_H_) || (KW47B42ZB2_cm33_core0_H_) || (KW47B42ZB3_cm33_core0_H_) || (KW47B42ZB6_cm33_core0_H_) || (KW47B42ZB7_cm33_core0_H_) || (KW47Z420B2_H_) || (KW47Z420B3_H_) || (KW47Z42082_H_) || (KW47Z42092_H_))
+#if defined(KW47B42Z83_cm33_core0_H_) || defined(KW47B42Z96_cm33_core0_H_) || defined(KW47B42Z97_cm33_core0_H_) || defined(KW47B42ZB2_cm33_core0_H_) || defined(KW47B42ZB3_cm33_core0_H_) || defined(KW47B42ZB6_cm33_core0_H_) || defined(KW47B42ZB7_cm33_core0_H_) || defined(KW47Z420B2_H_) || defined(KW47Z420B3_H_) || defined(KW47Z42082_H_) || defined(KW47Z42092_H_)
 #define RADIO_IS_GEN_4P7 (1)
 #define NXP_RADIO_GEN (470)
 #define IS_APP_CORE (1)
@@ -1714,7 +1714,7 @@ static inline uint8_t Chip_GetVersion(void)
 {
     return DEVICE_REVISION_A0;
 }
-#elif defined((KW47B42Z83_cm33_core1_H_) || (KW47B42Z96_cm33_core1_H_) || (KW47B42Z97_cm33_core1_H_) || (KW47B42ZB2_cm33_core1_H_) || (KW47B42ZB3_cm33_core1_H_) || (KW47B42ZB6_cm33_core1_H_) || (KW47B42ZB7_cm33_core1_H_))
+#elif defined(KW47B42Z83_cm33_core1_H_) || defined(KW47B42Z96_cm33_core1_H_) || defined(KW47B42Z97_cm33_core1_H_) || defined(KW47B42ZB2_cm33_core1_H_) || defined(KW47B42ZB3_cm33_core1_H_) || defined(KW47B42ZB6_cm33_core1_H_) || defined(KW47B42ZB7_cm33_core1_H_)
 #define RADIO_IS_GEN_4P7 (1)
 #define NXP_RADIO_GEN (470)
 #define IS_APP_CORE (0)
