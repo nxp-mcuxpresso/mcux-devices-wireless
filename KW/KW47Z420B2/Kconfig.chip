@@ -98,6 +98,11 @@ config MCUX_HW_DEVICE_PART
     string
     default "KW47Z420B2AFTA" if MCUX_HW_DEVICE_PART_KW47Z420B2AFTA
 
+config MCUX_HW_IP_DriverType_LPUART_LIN
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_KW47Z420B2xxxA
+
 # ip information
 config MCUX_HW_IP_DriverType_ATX
     bool

@@ -103,6 +103,11 @@ config MCUX_TOOLCHAIN_JLINK_CPU_IDENTIFIER
     string
     default "KW45Z41053" if MCUX_HW_DEVICE_ID_KW45Z41053xxxA
 
+config MCUX_HW_IP_DriverType_LPUART_LIN
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_KW45Z41053xxxA
+
 # ip information
 config MCUX_HW_IP_DriverType_ATX
     bool
