@@ -8,13 +8,13 @@
 **
 **     Reference manual:    Rev. 1, 2024-10-13
 **     Version:             rev. 1.0, 2024-10-13
-**     Build:               b241128
+**     Build:               b250106
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for KW47Z420B3
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -1762,12 +1762,20 @@ static inline uint8_t Chip_GetVersion(void)
 {
     return DEVICE_REVISION_A0;
 }
+
+/*
+ * CE STCMs base address.
+ */
+#define CE_STCM5_BASE (0x20020000u)
+#define CE_STCM6_BASE (0x20028000u)
+#define CE_STCM7_BASE (0x20030000u)
+
 #elif defined(KW47B42Z83_cm33_core1_H_) || defined(KW47B42Z96_cm33_core1_H_) || defined(KW47B42Z97_cm33_core1_H_) || defined(KW47B42ZB2_cm33_core1_H_) || defined(KW47B42ZB3_cm33_core1_H_) || defined(KW47B42ZB6_cm33_core1_H_) || defined(KW47B42ZB7_cm33_core1_H_)
 #define RADIO_IS_GEN_4P7 (1)
 #define NXP_RADIO_GEN (470)
 #define IS_APP_CORE (0)
 #define IS_RADIO_CORE (1)
-#define MCXW72_core1_SERIES
+#define KW47_core1_SERIES
 
 /*! @brief define LTC0 from LTC. */
 #define LTC0 LTC

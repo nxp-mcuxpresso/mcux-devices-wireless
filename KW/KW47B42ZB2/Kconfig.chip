@@ -63,11 +63,6 @@ config MCUX_HW_IP_DriverType_CCM32K
     default y
     depends on MCUX_HW_DEVICE_ID_KW47B42ZB2xxxA
 
-config MCUX_HW_IP_DriverType_CE
-    bool
-    default y
-    depends on MCUX_HW_DEVICE_ID_KW47B42ZB2xxxA
-
 config MCUX_HW_IP_DriverType_CMC
     bool
     default y
