@@ -63,8 +63,10 @@
     - initial version.
 
 @section io_mux IO_MUX
-  The current IO_MUX driver version is 2.2.0.
+  The current IO_MUX driver version is 2.2.1.
 
+  - 2.2.1
+    - Fixed component id.
   - 2.2.0
     - Update io_mux signals according to data sheet.
   - 2.1.2
@@ -96,8 +98,10 @@
     - initial version.
 
 @section ocotp OCOTP
-  The current OCOTP driver version is 2.2.1.
+  The current OCOTP driver version is 2.2.2.
 
+  - 2.2.2
+    - Fixed component id.
   - 2.2.1
     - Removed reset on OTP init and deinit to keep OTP configuration on boot.
   - 2.2.0
@@ -118,8 +122,10 @@
     - initial version for A0.
 
 @section iped IPED
-  The current IPED driver version is 1.0.0.
+  The current IPED driver version is 1.0.1.
 
+  - 1.0.1
+    - Fixed component id.
   - 1.0.0
     - initial version
 

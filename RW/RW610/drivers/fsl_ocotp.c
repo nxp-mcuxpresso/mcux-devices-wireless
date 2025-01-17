@@ -1,7 +1,5 @@
 /*
- * Copyright 2021-2023 NXP
- *
- *  
+ * Copyright 2021-2025 NXP
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -16,7 +14,7 @@
  ******************************************************************************/
 /* Component ID definition, used by tools. */
 #ifndef FSL_COMPONENT_ID
-#define FSL_COMPONENT_ID "platform.drivers.ocotp"
+#define FSL_COMPONENT_ID "platform.drivers.ocotp_rw61x"
 #endif
 
 /* All error masks in STATUS1 register except for SEC (Single error correction)
