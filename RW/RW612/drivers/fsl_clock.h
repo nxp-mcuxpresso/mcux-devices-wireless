@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2024 NXP
+ * Copyright 2020-2025 NXP
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -39,8 +39,8 @@
 
 /*! @name Driver version */
 /*@{*/
-/*! @brief CLOCK driver version 2.3.0. */
-#define FSL_CLOCK_DRIVER_VERSION (MAKE_VERSION(2, 3, 0))
+/*! @brief CLOCK driver version 2.4.0. */
+#define FSL_CLOCK_DRIVER_VERSION (MAKE_VERSION(2, 4, 0))
 /*@}*/
 
 /* Definition for delay API in clock driver, users can redefine it to the real application. */
@@ -539,17 +539,20 @@ typedef enum _clock_div_name
     kCLOCK_DivClockOut    = CLKCTL1_TUPLE_MUXA(0x768U, 0),
 } clock_div_name_t;
 
+/*! @brief SFG clock source. */
+typedef enum _clock_sfg_clk_src
+{
+    kCLOCK_FrgMainClk = 0, /*!< Main System clock */
+    kCLOCK_FrgPllDiv,      /*!< Main pll clock divider*/
+    kCLOCK_FrgSFro,        /*!< 16MHz FRO */
+    kCLOCK_FrgFFro,        /*!< FRO48/60 */
+} clock_sfg_clk_src_t;
+
 /*! @brief PLL configuration for FRG */
 typedef struct _clock_frg_clk_config
 {
     uint8_t num; /*!< FRG clock */
-    enum
-    {
-        kCLOCK_FrgMainClk = 0, /*!< Main System clock */
-        kCLOCK_FrgPllDiv,      /*!< Main pll clock divider*/
-        kCLOCK_FrgSFro,        /*!< 16MHz FRO */
-        kCLOCK_FrgFFro,        /*!< FRO48/60 */
-    } sfg_clock_src;
+    clock_sfg_clk_src_t sfg_clock_src; /*!< Clock source */
     uint8_t divider; /*!< Denominator of the fractional divider. */
     uint8_t mult;    /*!< Numerator of the fractional divider. */
 } clock_frg_clk_config_t;

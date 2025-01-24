@@ -1,8 +1,10 @@
 /*!
 @page driver_log Driver Change Log
 @section clock CLOCK
-  The current CLOCK driver version is 2.3.0.
+  The current CLOCK driver version is 2.4.0.
 
+  - 2.4.0
+    - Fix C++ project build fail that SFG clock source enumeration not declared.
   - 2.3.0
     - Added CLOCK_GetFreq() API
     - Removed DTRNG flag wait in clock API to avoid unconditional delay.
