@@ -428,3 +428,8 @@ config MCUX_HW_IP_DriverType_ZLL
     bool
     default y
     depends on MCUX_HW_DEVICE_ID_K32W1480xxxA
+
+config MCUX_HW_IP_DriverType_LPCAC
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_K32W1480xxxA

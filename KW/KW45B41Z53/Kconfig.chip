@@ -433,3 +433,8 @@ config MCUX_HW_IP_DriverType_XCVR_TX_DIG
     bool
     default y
     depends on MCUX_HW_DEVICE_ID_KW45B41Z53xxxA
+
+config MCUX_HW_IP_DriverType_LPCAC
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_KW45B41Z53xxxA
