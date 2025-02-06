@@ -63,7 +63,7 @@ config MCUX_HW_DEVICE_ID_K32W1480xxxA
 choice MCUX_HW_DEVICE_PART_K32W1480
     prompt "Device K32W1480 Part"
     config MCUX_HW_DEVICE_PART_K32W1480VFTA
-    bool "Device part K32W1480VFTA"
+    bool "K32W1480VFTA"
     select MCUX_HW_DEVICE_ID_K32W1480xxxA
 endchoice
 

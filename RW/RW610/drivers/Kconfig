@@ -6,42 +6,42 @@
 menu "Device specific drivers configuration"
 
     config MCUX_COMPONENT_driver.clock
-         bool "Use driver clock"
+         bool "clock"
          default y
 
     config MCUX_COMPONENT_driver.i2s_bridge
-         bool "Use driver i2s_bridge"
+         bool "i2s_bridge"
          default y
 
     config MCUX_COMPONENT_driver.inputmux_connections
-         bool "Use driver inputmux_connections"
+         bool "inputmux_connections"
          default y
 
     config MCUX_COMPONENT_driver.io_mux
-         bool "Use driver io_mux"
+         bool "io_mux"
          default y
 
     config MCUX_COMPONENT_driver.iped_rw61x
-         bool "Use driver iped"
+         bool "iped"
          default y
 
     config MCUX_COMPONENT_driver.memory
-         bool "Use driver memory"
+         bool "memory"
          default y
 
     config MCUX_COMPONENT_driver.ocotp_rw61x
-         bool "Use driver ocotp"
+         bool "ocotp"
          default y
 
     config MCUX_COMPONENT_driver.power
-         bool "Use driver power"
+         bool "power"
          default y
 
     config MCUX_COMPONENT_driver.reset
-         bool "Use driver reset"
+         bool "reset"
          default y
 
     config MCUX_COMPONENT_driver.romapi
-         bool "Use driver romapi"
+         bool "romapi"
 
 endmenu

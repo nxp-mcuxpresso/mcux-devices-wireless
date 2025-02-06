@@ -63,13 +63,13 @@ config MCUX_HW_DEVICE_ID_RW612
 choice MCUX_HW_DEVICE_PART_RW612
     prompt "Device RW612 Part"
     config MCUX_HW_DEVICE_PART_RW612HNA2I
-    bool "Device part RW612HNA2I"
+    bool "RW612HNA2I"
     select MCUX_HW_DEVICE_ID_RW612
     config MCUX_HW_DEVICE_PART_RW612ETA2I
-    bool "Device part RW612ETA2I"
+    bool "RW612ETA2I"
     select MCUX_HW_DEVICE_ID_RW612
     config MCUX_HW_DEVICE_PART_RW612UKA2I
-    bool "Device part RW612UKA2I"
+    bool "RW612UKA2I"
     select MCUX_HW_DEVICE_ID_RW612
 endchoice
 
