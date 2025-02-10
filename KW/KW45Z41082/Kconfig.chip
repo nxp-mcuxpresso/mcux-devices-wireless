@@ -333,3 +333,8 @@ config MCUX_HW_IP_DriverType_WUU
     bool
     default y
     depends on MCUX_HW_DEVICE_ID_KW45Z41082xxxA
+
+config MCUX_HW_IP_DriverType_LPCAC
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_KW45Z41082xxxA
