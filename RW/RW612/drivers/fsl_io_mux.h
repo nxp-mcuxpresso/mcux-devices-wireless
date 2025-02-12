@@ -21,7 +21,7 @@
  ******************************************************************************/
 /* Component ID definition, used by tools. */
 #ifndef FSL_COMPONENT_ID
-#define FSL_COMPONENT_ID "platform.drivers.io_mux"
+#define FSL_COMPONENT_ID "platform.drivers.cns_io_mux"
 #endif
 
 /*! @name Driver version */
