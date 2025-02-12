@@ -7,11 +7,6 @@
 #ifndef _FSL_IPED_H_
 #define _FSL_IPED_H_
 
-/* Component ID definition, used by tools. */
-#ifndef FSL_COMPONENT_ID
-#define FSL_COMPONENT_ID "platform.drivers.iped_rw61x"
-#endif
-
 #include <stdint.h>
 #include <stddef.h>
 
