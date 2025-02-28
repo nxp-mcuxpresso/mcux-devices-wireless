@@ -28,8 +28,10 @@
     - initial version.
 
 @section power POWER
-  The current POWER driver version is 2.5.0.
+  The current POWER driver version is 2.5.1.
 
+  - 2.5.1
+    - Added new SVC trim equation for new samples
   - 2.5.0
     - Added Power_InitLoadGdetCfg() API
     - Added bool return value for POWER_EnableGDetVSensors()
