@@ -8,7 +8,7 @@
 **                          RW612UKA2I
 **
 **     Version:             rev. 1.0, 2021-03-16
-**     Build:               b250402
+**     Build:               b250407
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for SYSPLL_TCPU
@@ -88,26 +88,26 @@
 /** SYSPLL_TCPU - Register Layout Typedef */
 typedef struct {
        uint8_t RESERVED_0[224];
-  __I  uint8_t SYSBYPASS_SOC_CTRL_ONE_RO_REG;      /**< offset: 0xE0 */
-  __I  uint8_t SYSBYPASS_SOC_CTRL_TWO_RO_REG;      /**< offset: 0xE1 */
-  __I  uint8_t SYSBYPASS_SOC_CTRL_THREE_RO_REG;    /**< offset: 0xE2 */
-  __I  uint8_t REG_RO_REG;                         /**< offset: 0xE3 */
-  __IO uint8_t SYS_CTRL_REG;                       /**< offset: 0xE4 */
-  __IO uint8_t SYSBYPASS_SOC_CTRL_ONE_RW_REG;      /**< offset: 0xE5 */
-  __IO uint8_t SYSBYPASS_SOC_CTRL_TWO_RW_REG;      /**< offset: 0xE6 */
-  __IO uint8_t SYSBYPASS_SOC_CTRL_THREE_RW_REG;    /**< offset: 0xE7 */
-  __IO uint8_t TCPU_CTRL_ONE_REG;                  /**< offset: 0xE8 */
-  __IO uint8_t TCPU_CTRL_TWO_REG;                  /**< offset: 0xE9 */
-  __IO uint8_t TCPU_CTRL_THREE_REG;                /**< offset: 0xEA */
-  __IO uint8_t TCPU_CTRL_FOUR_REG;                 /**< offset: 0xEB */
-  __IO uint8_t TCPU_CTRL_FIVE_REG;                 /**< offset: 0xEC */
-  __IO uint8_t TCPU_CTRL_SIX_REG;                  /**< offset: 0xED */
-  __IO uint8_t CLKTREE_CTRL_ONE_REG;               /**< offset: 0xEE */
-  __IO uint8_t CLKTREE_CTRL_TWO_REG;               /**< offset: 0xEF */
-  __IO uint8_t GPIO_CTRL_REG;                      /**< offset: 0xF0 */
-  __IO uint8_t ATEST_CTRL_REG;                     /**< offset: 0xF1 */
-  __IO uint8_t RESERVED_LO_REG;                    /**< offset: 0xF2 */
-  __IO uint8_t RESERVED_HI_REG;                    /**< offset: 0xF3 */
+  __I  uint8_t SYSBYPASS_SOC_CTRL_ONE_RO_REG;      /**< SYSBYPASS_SOC_CTRL_ONE_RO_REG, offset: 0xE0 */
+  __I  uint8_t SYSBYPASS_SOC_CTRL_TWO_RO_REG;      /**< SYSBYPASS_SOC_CTRL_TWO_RO_REG, offset: 0xE1 */
+  __I  uint8_t SYSBYPASS_SOC_CTRL_THREE_RO_REG;    /**< SYSBYPASS_SOC_CTRL_THREE_RO_REG, offset: 0xE2 */
+  __I  uint8_t REG_RO_REG;                         /**< REG_RO_REG, offset: 0xE3 */
+  __IO uint8_t SYS_CTRL_REG;                       /**< SYS_CTRL_REG, offset: 0xE4 */
+  __IO uint8_t SYSBYPASS_SOC_CTRL_ONE_RW_REG;      /**< SYSBYPASS_SOC_CTRL_ONE_RW_REG, offset: 0xE5 */
+  __IO uint8_t SYSBYPASS_SOC_CTRL_TWO_RW_REG;      /**< SYSBYPASS_SOC_CTRL_TWO_RW_REG, offset: 0xE6 */
+  __IO uint8_t SYSBYPASS_SOC_CTRL_THREE_RW_REG;    /**< SYSBYPASS_SOC_CTRL_THREE_RW_REG, offset: 0xE7 */
+  __IO uint8_t TCPU_CTRL_ONE_REG;                  /**< TCPU_CTRL_ONE_REG, offset: 0xE8 */
+  __IO uint8_t TCPU_CTRL_TWO_REG;                  /**< TCPU_CTRL_TWO_REG, offset: 0xE9 */
+  __IO uint8_t TCPU_CTRL_THREE_REG;                /**< TCPU_CTRL_THREE_REG, offset: 0xEA */
+  __IO uint8_t TCPU_CTRL_FOUR_REG;                 /**< TCPU_CTRL_FOUR_REG, offset: 0xEB */
+  __IO uint8_t TCPU_CTRL_FIVE_REG;                 /**< TCPU_CTRL_FIVE_REG, offset: 0xEC */
+  __IO uint8_t TCPU_CTRL_SIX_REG;                  /**< TCPU_CTRL_SIX_REG, offset: 0xED */
+  __IO uint8_t CLKTREE_CTRL_ONE_REG;               /**< CLKTREE_CTRL_ONE_REG, offset: 0xEE */
+  __IO uint8_t CLKTREE_CTRL_TWO_REG;               /**< CLKTREE_CTRL_TWO_REG, offset: 0xEF */
+  __IO uint8_t GPIO_CTRL_REG;                      /**< GPIO_CTRL_REG, offset: 0xF0 */
+  __IO uint8_t ATEST_CTRL_REG;                     /**< ATEST_CTRL_REG, offset: 0xF1 */
+  __IO uint8_t RESERVED_LO_REG;                    /**< RESERVED_LO_REG, offset: 0xF2 */
+  __IO uint8_t RESERVED_HI_REG;                    /**< RESERVED_HI_REG, offset: 0xF3 */
 } SYSPLL_TCPU_Type;
 
 /* ----------------------------------------------------------------------------
@@ -119,193 +119,193 @@ typedef struct {
  * @{
  */
 
-/*! @name SYSBYPASS_SOC_CTRL_ONE_RO_REG -  */
+/*! @name SYSBYPASS_SOC_CTRL_ONE_RO_REG - SYSBYPASS_SOC_CTRL_ONE_RO_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_ONE_RO_REG_SYSBYPASS_SOC_CTRL_ONE_RO_MASK (0xFFU)
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_ONE_RO_REG_SYSBYPASS_SOC_CTRL_ONE_RO_SHIFT (0U)
-/*! SYSBYPASS_SOC_CTRL_ONE_RO - Reserved.Do not change */
+/*! SYSBYPASS_SOC_CTRL_ONE_RO - Reserved. (Do not change) */
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_ONE_RO_REG_SYSBYPASS_SOC_CTRL_ONE_RO(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_ONE_RO_REG_SYSBYPASS_SOC_CTRL_ONE_RO_SHIFT)) & SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_ONE_RO_REG_SYSBYPASS_SOC_CTRL_ONE_RO_MASK)
 /*! @} */
 
-/*! @name SYSBYPASS_SOC_CTRL_TWO_RO_REG -  */
+/*! @name SYSBYPASS_SOC_CTRL_TWO_RO_REG - SYSBYPASS_SOC_CTRL_TWO_RO_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_TWO_RO_REG_SYSBYPASS_SOC_CTRL_TWO_RO_MASK (0xFFU)
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_TWO_RO_REG_SYSBYPASS_SOC_CTRL_TWO_RO_SHIFT (0U)
-/*! SYSBYPASS_SOC_CTRL_TWO_RO - Reserved.Do not change */
+/*! SYSBYPASS_SOC_CTRL_TWO_RO - Reserved. (Do not change) */
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_TWO_RO_REG_SYSBYPASS_SOC_CTRL_TWO_RO(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_TWO_RO_REG_SYSBYPASS_SOC_CTRL_TWO_RO_SHIFT)) & SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_TWO_RO_REG_SYSBYPASS_SOC_CTRL_TWO_RO_MASK)
 /*! @} */
 
-/*! @name SYSBYPASS_SOC_CTRL_THREE_RO_REG -  */
+/*! @name SYSBYPASS_SOC_CTRL_THREE_RO_REG - SYSBYPASS_SOC_CTRL_THREE_RO_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_THREE_RO_REG_SYSBYPASS_SOC_CTRL_THREE_RO_MASK (0xFFU)
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_THREE_RO_REG_SYSBYPASS_SOC_CTRL_THREE_RO_SHIFT (0U)
-/*! SYSBYPASS_SOC_CTRL_THREE_RO - Reserved.Do not change */
+/*! SYSBYPASS_SOC_CTRL_THREE_RO - Reserved. (Do not change) */
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_THREE_RO_REG_SYSBYPASS_SOC_CTRL_THREE_RO(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_THREE_RO_REG_SYSBYPASS_SOC_CTRL_THREE_RO_SHIFT)) & SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_THREE_RO_REG_SYSBYPASS_SOC_CTRL_THREE_RO_MASK)
 /*! @} */
 
-/*! @name REG_RO_REG -  */
+/*! @name REG_RO_REG - REG_RO_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_REG_RO_REG_REG_RO_MASK       (0xFFU)
 #define SYSPLL_TCPU_REG_RO_REG_REG_RO_SHIFT      (0U)
-/*! REG_RO - Reserved.Do not change */
+/*! REG_RO - Reserved. (Do not change) */
 #define SYSPLL_TCPU_REG_RO_REG_REG_RO(x)         (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_REG_RO_REG_REG_RO_SHIFT)) & SYSPLL_TCPU_REG_RO_REG_REG_RO_MASK)
 /*! @} */
 
-/*! @name SYS_CTRL_REG -  */
+/*! @name SYS_CTRL_REG - SYS_CTRL_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_SYS_CTRL_REG_SYS_CTRL_MASK   (0xFFU)
 #define SYSPLL_TCPU_SYS_CTRL_REG_SYS_CTRL_SHIFT  (0U)
-/*! SYS_CTRL - Reserved.Do not change */
+/*! SYS_CTRL - Reserved. (Do not change) */
 #define SYSPLL_TCPU_SYS_CTRL_REG_SYS_CTRL(x)     (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_SYS_CTRL_REG_SYS_CTRL_SHIFT)) & SYSPLL_TCPU_SYS_CTRL_REG_SYS_CTRL_MASK)
 /*! @} */
 
-/*! @name SYSBYPASS_SOC_CTRL_ONE_RW_REG -  */
+/*! @name SYSBYPASS_SOC_CTRL_ONE_RW_REG - SYSBYPASS_SOC_CTRL_ONE_RW_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_ONE_RW_REG_SYSBYPASS_SOC_CTRL_ONE_RW_MASK (0xFFU)
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_ONE_RW_REG_SYSBYPASS_SOC_CTRL_ONE_RW_SHIFT (0U)
-/*! SYSBYPASS_SOC_CTRL_ONE_RW - Reserved.Do not change */
+/*! SYSBYPASS_SOC_CTRL_ONE_RW - Reserved. (Do not change) */
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_ONE_RW_REG_SYSBYPASS_SOC_CTRL_ONE_RW(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_ONE_RW_REG_SYSBYPASS_SOC_CTRL_ONE_RW_SHIFT)) & SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_ONE_RW_REG_SYSBYPASS_SOC_CTRL_ONE_RW_MASK)
 /*! @} */
 
-/*! @name SYSBYPASS_SOC_CTRL_TWO_RW_REG -  */
+/*! @name SYSBYPASS_SOC_CTRL_TWO_RW_REG - SYSBYPASS_SOC_CTRL_TWO_RW_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_TWO_RW_REG_SYSBYPASS_SOC_CTRL_TWO_RW_MASK (0xFFU)
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_TWO_RW_REG_SYSBYPASS_SOC_CTRL_TWO_RW_SHIFT (0U)
-/*! SYSBYPASS_SOC_CTRL_TWO_RW - Reserved.Do not change */
+/*! SYSBYPASS_SOC_CTRL_TWO_RW - Reserved. (Do not change) */
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_TWO_RW_REG_SYSBYPASS_SOC_CTRL_TWO_RW(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_TWO_RW_REG_SYSBYPASS_SOC_CTRL_TWO_RW_SHIFT)) & SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_TWO_RW_REG_SYSBYPASS_SOC_CTRL_TWO_RW_MASK)
 /*! @} */
 
-/*! @name SYSBYPASS_SOC_CTRL_THREE_RW_REG -  */
+/*! @name SYSBYPASS_SOC_CTRL_THREE_RW_REG - SYSBYPASS_SOC_CTRL_THREE_RW_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_THREE_RW_REG_SYSBYPASS_SOC_CTRL_THREE_RW_MASK (0xFFU)
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_THREE_RW_REG_SYSBYPASS_SOC_CTRL_THREE_RW_SHIFT (0U)
-/*! SYSBYPASS_SOC_CTRL_THREE_RW - Reserved.Do not change */
+/*! SYSBYPASS_SOC_CTRL_THREE_RW - Reserved. (Do not change) */
 #define SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_THREE_RW_REG_SYSBYPASS_SOC_CTRL_THREE_RW(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_THREE_RW_REG_SYSBYPASS_SOC_CTRL_THREE_RW_SHIFT)) & SYSPLL_TCPU_SYSBYPASS_SOC_CTRL_THREE_RW_REG_SYSBYPASS_SOC_CTRL_THREE_RW_MASK)
 /*! @} */
 
-/*! @name TCPU_CTRL_ONE_REG -  */
+/*! @name TCPU_CTRL_ONE_REG - TCPU_CTRL_ONE_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_TCPU_CTRL_ONE_REG_RSVD0_MASK (0xFU)
 #define SYSPLL_TCPU_TCPU_CTRL_ONE_REG_RSVD0_SHIFT (0U)
-/*! RSVD0 - Reserved.Do not change */
+/*! RSVD0 - Reserved. (Do not change) */
 #define SYSPLL_TCPU_TCPU_CTRL_ONE_REG_RSVD0(x)   (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_TCPU_CTRL_ONE_REG_RSVD0_SHIFT)) & SYSPLL_TCPU_TCPU_CTRL_ONE_REG_RSVD0_MASK)
 
 #define SYSPLL_TCPU_TCPU_CTRL_ONE_REG_REG_TCPU_CTRL_ONE_MASK (0x30U)
 #define SYSPLL_TCPU_TCPU_CTRL_ONE_REG_REG_TCPU_CTRL_ONE_SHIFT (4U)
-/*! REG_TCPU_CTRL_ONE - Adjust lock detector delay.Do not change */
+/*! REG_TCPU_CTRL_ONE - Adjust lock detector delay. */
 #define SYSPLL_TCPU_TCPU_CTRL_ONE_REG_REG_TCPU_CTRL_ONE(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_TCPU_CTRL_ONE_REG_REG_TCPU_CTRL_ONE_SHIFT)) & SYSPLL_TCPU_TCPU_CTRL_ONE_REG_REG_TCPU_CTRL_ONE_MASK)
 
 #define SYSPLL_TCPU_TCPU_CTRL_ONE_REG_RSVD1_MASK (0xC0U)
 #define SYSPLL_TCPU_TCPU_CTRL_ONE_REG_RSVD1_SHIFT (6U)
-/*! RSVD1 - Reserved.Do not change */
+/*! RSVD1 - Reserved. (Do not change) */
 #define SYSPLL_TCPU_TCPU_CTRL_ONE_REG_RSVD1(x)   (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_TCPU_CTRL_ONE_REG_RSVD1_SHIFT)) & SYSPLL_TCPU_TCPU_CTRL_ONE_REG_RSVD1_MASK)
 /*! @} */
 
-/*! @name TCPU_CTRL_TWO_REG -  */
+/*! @name TCPU_CTRL_TWO_REG - TCPU_CTRL_TWO_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_TCPU_CTRL_TWO_REG_TCPU_CTRL_TWO_MASK (0xFFU)
 #define SYSPLL_TCPU_TCPU_CTRL_TWO_REG_TCPU_CTRL_TWO_SHIFT (0U)
-/*! TCPU_CTRL_TWO - Reserved.Do not change */
+/*! TCPU_CTRL_TWO - Reserved. (Do not change) */
 #define SYSPLL_TCPU_TCPU_CTRL_TWO_REG_TCPU_CTRL_TWO(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_TCPU_CTRL_TWO_REG_TCPU_CTRL_TWO_SHIFT)) & SYSPLL_TCPU_TCPU_CTRL_TWO_REG_TCPU_CTRL_TWO_MASK)
 /*! @} */
 
-/*! @name TCPU_CTRL_THREE_REG -  */
+/*! @name TCPU_CTRL_THREE_REG - TCPU_CTRL_THREE_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_TCPU_CTRL_THREE_REG_TCPU_CTRL_THREE_MASK (0xFFU)
 #define SYSPLL_TCPU_TCPU_CTRL_THREE_REG_TCPU_CTRL_THREE_SHIFT (0U)
-/*! TCPU_CTRL_THREE - Reserved.Do not change */
+/*! TCPU_CTRL_THREE - Reserved. (Do not change) */
 #define SYSPLL_TCPU_TCPU_CTRL_THREE_REG_TCPU_CTRL_THREE(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_TCPU_CTRL_THREE_REG_TCPU_CTRL_THREE_SHIFT)) & SYSPLL_TCPU_TCPU_CTRL_THREE_REG_TCPU_CTRL_THREE_MASK)
 /*! @} */
 
-/*! @name TCPU_CTRL_FOUR_REG -  */
+/*! @name TCPU_CTRL_FOUR_REG - TCPU_CTRL_FOUR_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_TCPU_CTRL_FOUR_REG_TCPU_CTRL_FOUR_MASK (0xFFU)
 #define SYSPLL_TCPU_TCPU_CTRL_FOUR_REG_TCPU_CTRL_FOUR_SHIFT (0U)
-/*! TCPU_CTRL_FOUR - Reserved.Do not change */
+/*! TCPU_CTRL_FOUR - Reserved. (Do not change) */
 #define SYSPLL_TCPU_TCPU_CTRL_FOUR_REG_TCPU_CTRL_FOUR(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_TCPU_CTRL_FOUR_REG_TCPU_CTRL_FOUR_SHIFT)) & SYSPLL_TCPU_TCPU_CTRL_FOUR_REG_TCPU_CTRL_FOUR_MASK)
 /*! @} */
 
-/*! @name TCPU_CTRL_FIVE_REG -  */
+/*! @name TCPU_CTRL_FIVE_REG - TCPU_CTRL_FIVE_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_TCPU_CTRL_FIVE_REG_TCPU_CTRL_FIVE_MASK (0xFFU)
 #define SYSPLL_TCPU_TCPU_CTRL_FIVE_REG_TCPU_CTRL_FIVE_SHIFT (0U)
-/*! TCPU_CTRL_FIVE - Reserved.Do not change */
+/*! TCPU_CTRL_FIVE - Reserved. (Do not change) */
 #define SYSPLL_TCPU_TCPU_CTRL_FIVE_REG_TCPU_CTRL_FIVE(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_TCPU_CTRL_FIVE_REG_TCPU_CTRL_FIVE_SHIFT)) & SYSPLL_TCPU_TCPU_CTRL_FIVE_REG_TCPU_CTRL_FIVE_MASK)
 /*! @} */
 
-/*! @name TCPU_CTRL_SIX_REG -  */
+/*! @name TCPU_CTRL_SIX_REG - TCPU_CTRL_SIX_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_TCPU_CTRL_SIX_REG_TCPU_CTRL_SIX_MASK (0xFFU)
 #define SYSPLL_TCPU_TCPU_CTRL_SIX_REG_TCPU_CTRL_SIX_SHIFT (0U)
-/*! TCPU_CTRL_SIX - Reserved.Do not change */
+/*! TCPU_CTRL_SIX - Reserved. (Do not change) */
 #define SYSPLL_TCPU_TCPU_CTRL_SIX_REG_TCPU_CTRL_SIX(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_TCPU_CTRL_SIX_REG_TCPU_CTRL_SIX_SHIFT)) & SYSPLL_TCPU_TCPU_CTRL_SIX_REG_TCPU_CTRL_SIX_MASK)
 /*! @} */
 
-/*! @name CLKTREE_CTRL_ONE_REG -  */
+/*! @name CLKTREE_CTRL_ONE_REG - CLKTREE_CTRL_ONE_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_CLKTREE_CTRL_ONE_REG_CLKTREE_CTRL_ONE_MASK (0xFFU)
 #define SYSPLL_TCPU_CLKTREE_CTRL_ONE_REG_CLKTREE_CTRL_ONE_SHIFT (0U)
-/*! CLKTREE_CTRL_ONE - Reserved.Do not change */
+/*! CLKTREE_CTRL_ONE - Reserved. (Do not change) */
 #define SYSPLL_TCPU_CLKTREE_CTRL_ONE_REG_CLKTREE_CTRL_ONE(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_CLKTREE_CTRL_ONE_REG_CLKTREE_CTRL_ONE_SHIFT)) & SYSPLL_TCPU_CLKTREE_CTRL_ONE_REG_CLKTREE_CTRL_ONE_MASK)
 /*! @} */
 
-/*! @name CLKTREE_CTRL_TWO_REG -  */
+/*! @name CLKTREE_CTRL_TWO_REG - CLKTREE_CTRL_TWO_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_CLKTREE_CTRL_TWO_REG_CLKTREE_CTRL_TWO_MASK (0xFFU)
 #define SYSPLL_TCPU_CLKTREE_CTRL_TWO_REG_CLKTREE_CTRL_TWO_SHIFT (0U)
-/*! CLKTREE_CTRL_TWO - Reserved.Do not change */
+/*! CLKTREE_CTRL_TWO - Reserved. (Do not change) */
 #define SYSPLL_TCPU_CLKTREE_CTRL_TWO_REG_CLKTREE_CTRL_TWO(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_CLKTREE_CTRL_TWO_REG_CLKTREE_CTRL_TWO_SHIFT)) & SYSPLL_TCPU_CLKTREE_CTRL_TWO_REG_CLKTREE_CTRL_TWO_MASK)
 /*! @} */
 
-/*! @name GPIO_CTRL_REG -  */
+/*! @name GPIO_CTRL_REG - GPIO_CTRL_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_GPIO_CTRL_REG_GPIO_CTRL_MASK (0xFFU)
 #define SYSPLL_TCPU_GPIO_CTRL_REG_GPIO_CTRL_SHIFT (0U)
-/*! GPIO_CTRL - Reserved.Do not change */
+/*! GPIO_CTRL - Reserved. (Do not change) */
 #define SYSPLL_TCPU_GPIO_CTRL_REG_GPIO_CTRL(x)   (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_GPIO_CTRL_REG_GPIO_CTRL_SHIFT)) & SYSPLL_TCPU_GPIO_CTRL_REG_GPIO_CTRL_MASK)
 /*! @} */
 
-/*! @name ATEST_CTRL_REG -  */
+/*! @name ATEST_CTRL_REG - ATEST_CTRL_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_ATEST_CTRL_REG_ATEST_CTRL_MASK (0xFFU)
 #define SYSPLL_TCPU_ATEST_CTRL_REG_ATEST_CTRL_SHIFT (0U)
-/*! ATEST_CTRL - Reserved.Do not change */
+/*! ATEST_CTRL - Reserved. (Do not change) */
 #define SYSPLL_TCPU_ATEST_CTRL_REG_ATEST_CTRL(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_ATEST_CTRL_REG_ATEST_CTRL_SHIFT)) & SYSPLL_TCPU_ATEST_CTRL_REG_ATEST_CTRL_MASK)
 /*! @} */
 
-/*! @name RESERVED_LO_REG -  */
+/*! @name RESERVED_LO_REG - RESERVED_LO_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_RESERVED_LO_REG_RESERVED_LO_MASK (0xFFU)
 #define SYSPLL_TCPU_RESERVED_LO_REG_RESERVED_LO_SHIFT (0U)
-/*! RESERVED_LO - Reserved.Do not change */
+/*! RESERVED_LO - Reserved. (Do not change) */
 #define SYSPLL_TCPU_RESERVED_LO_REG_RESERVED_LO(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_RESERVED_LO_REG_RESERVED_LO_SHIFT)) & SYSPLL_TCPU_RESERVED_LO_REG_RESERVED_LO_MASK)
 /*! @} */
 
-/*! @name RESERVED_HI_REG -  */
+/*! @name RESERVED_HI_REG - RESERVED_HI_REG */
 /*! @{ */
 
 #define SYSPLL_TCPU_RESERVED_HI_REG_RESERVED_HI_MASK (0xFFU)
 #define SYSPLL_TCPU_RESERVED_HI_REG_RESERVED_HI_SHIFT (0U)
-/*! RESERVED_HI - Reserved.Do not change */
+/*! RESERVED_HI - Reserved. (Do not change) */
 #define SYSPLL_TCPU_RESERVED_HI_REG_RESERVED_HI(x) (((uint8_t)(((uint8_t)(x)) << SYSPLL_TCPU_RESERVED_HI_REG_RESERVED_HI_SHIFT)) & SYSPLL_TCPU_RESERVED_HI_REG_RESERVED_HI_MASK)
 /*! @} */
 

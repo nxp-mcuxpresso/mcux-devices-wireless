@@ -8,13 +8,13 @@
 **                          RW612UKA2I
 **
 **     Version:             rev. 1.0, 2021-03-16
-**     Build:               b241017
+**     Build:               b250407
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for FLEXSPI
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -496,6 +496,14 @@ typedef struct {
  *       burst required to meet the alignment requirement.
  */
 #define FLEXSPI_AHBCR_READADDROPT(x)             (((uint32_t)(((uint32_t)(x)) << FLEXSPI_AHBCR_READADDROPT_SHIFT)) & FLEXSPI_AHBCR_READADDROPT_MASK)
+
+#define FLEXSPI_AHBCR_RESUMEDISABLE_MASK         (0x80U)
+#define FLEXSPI_AHBCR_RESUMEDISABLE_SHIFT        (7U)
+/*! RESUMEDISABLE - AHB Read Resume Disable
+ *  0b0..Suspended AHB read prefetch will start to resume when AHB is IDLE
+ *  0b1..Suspended AHB read prefetch will not resume once it is aborted
+ */
+#define FLEXSPI_AHBCR_RESUMEDISABLE(x)           (((uint32_t)(((uint32_t)(x)) << FLEXSPI_AHBCR_RESUMEDISABLE_SHIFT)) & FLEXSPI_AHBCR_RESUMEDISABLE_MASK)
 
 #define FLEXSPI_AHBCR_READSZALIGN_MASK           (0x400U)
 #define FLEXSPI_AHBCR_READSZALIGN_SHIFT          (10U)
