@@ -697,12 +697,12 @@ void POWER_ConfigCauInSleep(bool pdCau)
 {
     if (pdCau) /* xtal / cau full pd */
     {
-        CAU->PD_CTRL_ONE_REG |= 0x4U;
+        CAU->PD_CTRL_ONE_REG |= CAU_PD_CTRL_ONE_REG_SLPBIAS_PD_MASK;
         CAU->SLP_CTRL_ONE_REG = 0xCU;
     }
     else
     {
-        CAU->PD_CTRL_ONE_REG &= 0xFBU;
+        CAU->PD_CTRL_ONE_REG &= ~CAU_PD_CTRL_ONE_REG_SLPBIAS_PD_MASK;
         CAU->SLP_CTRL_ONE_REG = 0x9EU;
         CAU->SLP_CTRL_TWO_REG = 0x6AU;
     }
@@ -749,9 +749,6 @@ AT_QUICKACCESS_SECTION_CODE(static void POWER_PrePowerMode(uint32_t mode, const 
     }
     else if (mode >= 3U)
     {
-        /* Turn off the short switch between C18/C11 and V18/V11.
-           In sleep mode, V11 drops to 0.8V */
-        BUCK18->BUCK_CTRL_TWENTY_REG = 0x75U;
         if (mode == 3U)
         {
             POWER_SaveNvicState();
@@ -1013,9 +1010,8 @@ void POWER_InitPowerConfig(const power_init_config_t *config)
     iBuck         = config->iBuck;
     gateCauRefClk = config->gateCauRefClk;
 
-    BUCK11->BUCK_CTRL_THREE_REG  = 0x10U;
-    BUCK18->BUCK_CTRL_THREE_REG  = 0x10U;
-    BUCK18->BUCK_CTRL_TWENTY_REG = 0x55U;
+    BUCK11->BUCK_CTRL_THREE_REG  = BUCK11_BUCK_CTRL_THREE_REG_SOC_BUCK_RINGOSC_CTRL_MASK;
+    BUCK18->BUCK_CTRL_THREE_REG  = BUCK18_BUCK_CTRL_THREE_REG_SOC_BUCK_RINGOSC_CTRL_MASK;
 
     SYSCTL0->AUTOCLKGATEOVERRIDE0 = 0U;
     /* Enable RAM dynamic clk gate */
@@ -1247,7 +1243,7 @@ void POWER_InitVoltage(uint32_t dro, uint32_t pack)
     SystemCoreClockUpdate();
 
     /* LPBG trim */
-    BUCK11->BUCK_CTRL_EIGHTEEN_REG = 0x6U;
+    BUCK11->BUCK_CTRL_EIGHTEEN_REG &= ~BUCK11_BUCK_CTRL_EIGHTEEN_REG_LPBG_TRIM_MASK;
 
     if (dro == 0U)
     { /* Boot voltage 1.11V */

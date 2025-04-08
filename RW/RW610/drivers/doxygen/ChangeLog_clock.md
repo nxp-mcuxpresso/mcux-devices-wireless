@@ -1,5 +1,9 @@
 # CLOCK
 
+## [2.3.1]
+
+- Updated code according to new header file. No function change.
+
 ## [2.3.0]
 
 - Added CLOCK_GetFreq() API

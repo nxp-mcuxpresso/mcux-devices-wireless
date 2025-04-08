@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 if (CONFIG_MCUX_COMPONENT_driver.clock)
-    mcux_component_version(2.3.0)
+    mcux_component_version(2.3.1)
     mcux_add_source( SOURCES fsl_clock.c fsl_clock.h )
     mcux_add_include( INCLUDES . )
 endif()
@@ -45,7 +45,7 @@ if (CONFIG_MCUX_COMPONENT_driver.ocotp_rw61x)
 endif()
 
 if (CONFIG_MCUX_COMPONENT_driver.power)
-    mcux_component_version(2.5.1)
+    mcux_component_version(2.5.2)
     mcux_add_source( SOURCES fsl_power.c fsl_power.h )
     mcux_add_include( INCLUDES . )
 endif()

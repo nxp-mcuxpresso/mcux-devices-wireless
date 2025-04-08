@@ -1,5 +1,9 @@
 # POWER
 
+## [2.5.2]
+
+- Updated code according to new header file. No function change. 
+
 ## [2.5.1]
 
 - Added new SVC trim equation for new samples
