@@ -176,7 +176,9 @@ typedef enum IRQn {
 #include "core_cm33.h"                 /* Core Peripheral Access Layer */
 #include "system_K32W1480.h"           /* Device specific configuration file */
 
+#ifndef K32W1480_SERIES
 #define K32W1480_SERIES
+#endif
 /* CPU specific feature definitions */
 #include "K32W1480_features.h"
 
@@ -2243,4 +2245,3 @@ typedef enum IRQn {
 
 
 #endif  /* K32W1480_COMMON_H_ */
-

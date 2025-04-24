@@ -238,7 +238,9 @@ typedef enum IRQn {
  */ /* end of group Cortex_Core_Configuration */
 
 
+#ifndef RW610_SERIES
 #define RW610_SERIES
+#endif
 /* CPU specific feature definitions */
 #include "RW610_features.h"
 
@@ -2817,4 +2819,3 @@ typedef enum
 
 
 #endif  /* RW610_COMMON_H_ */
-
