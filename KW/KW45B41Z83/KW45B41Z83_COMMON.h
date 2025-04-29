@@ -179,7 +179,9 @@ typedef enum IRQn {
 #include "core_cm33.h"                 /* Core Peripheral Access Layer */
 #include "system_KW45B41Z83.h"         /* Device specific configuration file */
 
+#ifndef KW45B41Z83_SERIES
 #define KW45B41Z83_SERIES
+#endif
 /* CPU specific feature definitions */
 #include "KW45B41Z83_features.h"
 
@@ -2224,4 +2226,3 @@ typedef enum IRQn {
 
 
 #endif  /* KW45B41Z83_COMMON_H_ */
-

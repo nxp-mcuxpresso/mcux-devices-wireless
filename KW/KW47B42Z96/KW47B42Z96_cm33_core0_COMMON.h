@@ -184,7 +184,9 @@ typedef enum IRQn {
  */ /* end of group Cortex_Core_Configuration */
 
 
+#ifndef KW47B42Z96_cm33_core0_SERIES
 #define KW47B42Z96_cm33_core0_SERIES
+#endif
 /* CPU specific feature definitions */
 #include "KW47B42Z96_cm33_core0_features.h"
 
@@ -2291,7 +2293,9 @@ typedef enum IRQn {
 #define NXP_RADIO_GEN (470)
 #define IS_APP_CORE (1)
 #define IS_RADIO_CORE (0)
+#ifndef KW47_core0_SERIES
 #define KW47_core0_SERIES
+#endif
 
 /*! @brief define LTC0 from LTC. */
 #define LTC0 LTC
@@ -2331,7 +2335,9 @@ static inline uint8_t Chip_GetVersion(void)
 #define NXP_RADIO_GEN (470)
 #define IS_APP_CORE (0)
 #define IS_RADIO_CORE (1)
+#ifndef KW47_core1_SERIES
 #define KW47_core1_SERIES
+#endif
 
 /*! @brief define LTC0 from LTC. */
 #define LTC0 LTC
@@ -2344,4 +2350,3 @@ static inline uint8_t Chip_GetVersion(void)
 
 
 #endif  /* KW47B42Z96_CM33_CORE0_COMMON_H_ */
-
