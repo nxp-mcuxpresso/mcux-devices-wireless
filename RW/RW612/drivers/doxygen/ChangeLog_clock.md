@@ -1,5 +1,10 @@
 # CLOCK
 
+## [2.3.2]
+
+- Fixed MSG issues. No function change.
+
+
 ## [2.3.1]
 
 - Updated code according to new header file. No function change.

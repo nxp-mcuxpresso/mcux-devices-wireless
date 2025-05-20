@@ -1,5 +1,9 @@
 # POWER
 
+## [2.5.3]
+
+- Fixed MSG issues. No function change. 
+
 ## [2.5.2]
 
 - Updated code according to new header file. No function change. 

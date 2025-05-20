@@ -115,6 +115,8 @@ static void CLOCK_DelayUs(uint32_t us)
 {
     uint32_t instNum;
 
+    assert(SystemCoreClock < (UINT32_MAX - 999999UL));
+    assert(((UINT32_MAX - 2U) / us) > ((SystemCoreClock + 999999UL) / 1000000UL));
     instNum = ((SystemCoreClock + 999999UL) / 1000000UL) * us;
     CLOCK_Delay((instNum + 2U) / 3U);
 }

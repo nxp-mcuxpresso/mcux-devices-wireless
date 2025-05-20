@@ -1,5 +1,9 @@
 # IO_MUX
 
+## [2.2.2]
+
+- Fixed MSG issues. No function change. 
+
 ## [2.2.1]
 
 - Fixed component id.

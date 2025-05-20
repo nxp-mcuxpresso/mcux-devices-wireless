@@ -1,5 +1,9 @@
 # OCOTP
 
+## [2.2.3]
+
+- Fixed MSG issues. No function change. 
+
 ## [2.2.2]
 
 - Fixed component id.

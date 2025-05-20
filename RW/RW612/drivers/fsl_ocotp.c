@@ -230,7 +230,7 @@ status_t OCOTP_ReadUniqueID(uint8_t *uid, uint32_t *idLen)
 static uint32_t soc_otp_read(uint32_t addr_line, uint64_t *value)
 {
     uint32_t dly                   = SOC_OTP_READ_DELAY_COUNT;
-    SOC_OTP_CTRL->OTP_ADDR         = (uint16_t)addr_line;
+    SOC_OTP_CTRL->OTP_ADDR         = (uint16_t)(addr_line & 0xFFFFU);
     SOC_OTP_CTRL->OTP_BYPASS_MODE1 = 0;
     SOC_OTP_CTRL->OTP_CMD_START    = SOC_OTP_CMD_READ;
     SOC_OTP_CTRL->OTP_CMD_START |= SOC_OTP_CTRL_OTP_CMD_START_OTP_CMD_START_MASK;
@@ -300,7 +300,7 @@ status_t OCOTP_ReadPackage(uint32_t *pack)
     status = OCOTP_ReadSocOtp(&data, OTP_PKG_TAG);
     if (status == kStatus_Success)
     {
-        *pack = ((uint32_t)data >> 16U) & 0xFFU;
+        *pack = (uint32_t)((data >> 16U) & 0xFFU);
     }
 
     return status;
