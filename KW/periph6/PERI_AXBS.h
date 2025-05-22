@@ -20,13 +20,13 @@
 **                          KW47Z420B3AFTA
 **
 **     Version:             rev. 1.0, 2024-10-13
-**     Build:               b241128
+**     Build:               b250521
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for AXBS
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -40,7 +40,7 @@
 */
 
 /*!
- * @file AXBS.h
+ * @file PERI_AXBS.h
  * @version 1.0
  * @date 2024-10-13
  * @brief CMSIS Peripheral Access Layer for AXBS
@@ -48,8 +48,8 @@
  * CMSIS Peripheral Access Layer for AXBS
  */
 
-#if !defined(AXBS_H_)
-#define AXBS_H_                                  /**< Symbol preventing repeated inclusion */
+#if !defined(PERI_AXBS_H_)
+#define PERI_AXBS_H_                             /**< Symbol preventing repeated inclusion */
 
 #if (defined(CPU_KW47B42Z83AFTA_cm33_core0))
 #include "KW47B42Z83_cm33_core0_COMMON.h"
@@ -1603,5 +1603,5 @@ typedef struct {
  */ /* end of group Peripheral_access_layer */
 
 
-#endif  /* AXBS_H_ */
+#endif  /* PERI_AXBS_H_ */
 

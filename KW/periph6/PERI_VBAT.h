@@ -20,13 +20,13 @@
 **                          KW47Z420B3AFTA
 **
 **     Version:             rev. 1.0, 2024-10-13
-**     Build:               b241128
+**     Build:               b250521
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for VBAT
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -40,7 +40,7 @@
 */
 
 /*!
- * @file VBAT.h
+ * @file PERI_VBAT.h
  * @version 1.0
  * @date 2024-10-13
  * @brief CMSIS Peripheral Access Layer for VBAT
@@ -48,8 +48,8 @@
  * CMSIS Peripheral Access Layer for VBAT
  */
 
-#if !defined(VBAT_H_)
-#define VBAT_H_                                  /**< Symbol preventing repeated inclusion */
+#if !defined(PERI_VBAT_H_)
+#define PERI_VBAT_H_                             /**< Symbol preventing repeated inclusion */
 
 #if (defined(CPU_KW47B42Z83AFTA_cm33_core0))
 #include "KW47B42Z83_cm33_core0_COMMON.h"
@@ -192,18 +192,18 @@ typedef struct {
 #define VBAT_STATUSA_POR_DET_MASK                (0x1U)
 #define VBAT_STATUSA_POR_DET_SHIFT               (0U)
 /*! POR_DET - POR Detect Flag
- *  0b0..Not reset
  *  0b0..No effect
- *  0b1..Reset
+ *  0b0..Not reset
  *  0b1..Clear the flag
+ *  0b1..Reset
  */
 #define VBAT_STATUSA_POR_DET(x)                  (((uint32_t)(((uint32_t)(x)) << VBAT_STATUSA_POR_DET_SHIFT)) & VBAT_STATUSA_POR_DET_MASK)
 
 #define VBAT_STATUSA_WAKEUP_FLAG_MASK            (0x2U)
 #define VBAT_STATUSA_WAKEUP_FLAG_SHIFT           (1U)
 /*! WAKEUP_FLAG - Wakeup Pin Flag
- *  0b0..Not asserted
  *  0b0..No effect
+ *  0b0..Not asserted
  *  0b1..Asserted
  *  0b1..Clear the flag
  */
@@ -212,20 +212,20 @@ typedef struct {
 #define VBAT_STATUSA_TIMER0_FLAG_MASK            (0x4U)
 #define VBAT_STATUSA_TIMER0_FLAG_SHIFT           (2U)
 /*! TIMER0_FLAG - Bandgap Timer 0 Flag
- *  0b0..Not reached
  *  0b0..No effect
- *  0b1..Reached
+ *  0b0..Not reached
  *  0b1..Clear the flag
+ *  0b1..Reached
  */
 #define VBAT_STATUSA_TIMER0_FLAG(x)              (((uint32_t)(((uint32_t)(x)) << VBAT_STATUSA_TIMER0_FLAG_SHIFT)) & VBAT_STATUSA_TIMER0_FLAG_MASK)
 
 #define VBAT_STATUSA_TIMER1_FLAG_MASK            (0x8U)
 #define VBAT_STATUSA_TIMER1_FLAG_SHIFT           (3U)
 /*! TIMER1_FLAG - Bandgap Timer 1 Flag
- *  0b0..Not reached
  *  0b0..No effect
- *  0b1..Reached
+ *  0b0..Not reached
  *  0b1..Clear the flag
+ *  0b1..Reached
  */
 #define VBAT_STATUSA_TIMER1_FLAG(x)              (((uint32_t)(((uint32_t)(x)) << VBAT_STATUSA_TIMER1_FLAG_SHIFT)) & VBAT_STATUSA_TIMER1_FLAG_MASK)
 
@@ -520,5 +520,5 @@ typedef struct {
  */ /* end of group Peripheral_access_layer */
 
 
-#endif  /* VBAT_H_ */
+#endif  /* PERI_VBAT_H_ */
 
