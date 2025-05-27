@@ -7,8 +7,8 @@
 **                          RW612HNA2I
 **                          RW612UKA2I
 **
-**     Version:             rev. 1.0, 2021-03-16
-**     Build:               b250407
+**     Version:             rev. 3.0, 2025-04-07
+**     Build:               b250519
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for CAU
@@ -23,21 +23,26 @@
 **     Revisions:
 **     - rev. 1.0 (2021-03-16)
 **         Initial version.
+**     - rev. 2.0 (2024-10-29)
+**         Change the device header file from single flat file to multiple files based on peripherals,
+**         each peripheral with dedicated header file located in periphN folder.
+**     - rev. 3.0 (2025-04-07)
+**         Based on CRR Rev9.1.
 **
 ** ###################################################################
 */
 
 /*!
- * @file CAU.h
- * @version 1.0
- * @date 2021-03-16
+ * @file PERI_CAU.h
+ * @version 3.0
+ * @date 2025-04-07
  * @brief CMSIS Peripheral Access Layer for CAU
  *
  * CMSIS Peripheral Access Layer for CAU
  */
 
-#if !defined(CAU_H_)
-#define CAU_H_                                   /**< Symbol preventing repeated inclusion */
+#if !defined(PERI_CAU_H_)
+#define PERI_CAU_H_                              /**< Symbol preventing repeated inclusion */
 
 #if (defined(CPU_RW610ETA2I) || defined(CPU_RW610HNA2I) || defined(CPU_RW610UKA2I))
 #include "RW610_COMMON.h"
@@ -752,5 +757,5 @@ typedef struct {
  */ /* end of group Peripheral_access_layer */
 
 
-#endif  /* CAU_H_ */
+#endif  /* PERI_CAU_H_ */
 
