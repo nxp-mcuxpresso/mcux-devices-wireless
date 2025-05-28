@@ -2,13 +2,13 @@
 ;  @file:    startup_RW612.s
 ;  @purpose: CMSIS Cortex-M33 Core Device Startup File
 ;            RW612
-;  @version: 1.0
-;  @date:    2021-3-16
-;  @build:   b240311
+;  @version: 3.0
+;  @date:    2025-4-7
+;  @build:   b250519
 ; -------------------------------------------------------------------------
 ;
 ; Copyright 1997-2016 Freescale Semiconductor, Inc.
-; Copyright 2016-2024 NXP
+; Copyright 2016-2025 NXP
 ; SPDX-License-Identifier: BSD-3-Clause
 ;
 ; The modules in this file are included in the libraries, and may be replaced

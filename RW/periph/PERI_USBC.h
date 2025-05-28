@@ -7,8 +7,8 @@
 **                          RW612HNA2I
 **                          RW612UKA2I
 **
-**     Version:             rev. 1.0, 2021-03-16
-**     Build:               b250402
+**     Version:             rev. 3.0, 2025-04-07
+**     Build:               b250519
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for USBC
@@ -23,21 +23,26 @@
 **     Revisions:
 **     - rev. 1.0 (2021-03-16)
 **         Initial version.
+**     - rev. 2.0 (2024-10-29)
+**         Change the device header file from single flat file to multiple files based on peripherals,
+**         each peripheral with dedicated header file located in periphN folder.
+**     - rev. 3.0 (2025-04-07)
+**         Based on CRR Rev9.1.
 **
 ** ###################################################################
 */
 
 /*!
- * @file USBC.h
- * @version 1.0
- * @date 2021-03-16
+ * @file PERI_USBC.h
+ * @version 3.0
+ * @date 2025-04-07
  * @brief CMSIS Peripheral Access Layer for USBC
  *
  * CMSIS Peripheral Access Layer for USBC
  */
 
-#if !defined(USBC_H_)
-#define USBC_H_                                  /**< Symbol preventing repeated inclusion */
+#if !defined(PERI_USBC_H_)
+#define PERI_USBC_H_                             /**< Symbol preventing repeated inclusion */
 
 #if (defined(CPU_RW610ETA2I) || defined(CPU_RW610HNA2I) || defined(CPU_RW610UKA2I))
 #include "RW610_COMMON.h"
@@ -245,7 +250,7 @@ typedef struct {
 
 #define USBC_HWHOST_NPORT_MASK                   (0xEU)
 #define USBC_HWHOST_NPORT_SHIFT                  (1U)
-/*! NPORT - The Nmber of downstream ports supported by the host controller. */
+/*! NPORT - The Number of downstream ports supported by the host controller. */
 #define USBC_HWHOST_NPORT(x)                     (((uint32_t)(((uint32_t)(x)) << USBC_HWHOST_NPORT_SHIFT)) & USBC_HWHOST_NPORT_MASK)
 /*! @} */
 
@@ -730,7 +735,7 @@ typedef struct {
 /*! LPM_RSP - LPM Response Received from Device
  *  0b00..No handshake
  *  0b01..STALL
- *  0b10..NYET
+ *  0b10..NYET(NOT YET)
  *  0b11..ACK
  */
 #define USBC_HSTLPMCSR_LPM_RSP(x)                (((uint32_t)(((uint32_t)(x)) << USBC_HSTLPMCSR_LPM_RSP_SHIFT)) & USBC_HSTLPMCSR_LPM_RSP_MASK)
@@ -3075,5 +3080,5 @@ typedef struct {
  */ /* end of group Peripheral_access_layer */
 
 
-#endif  /* USBC_H_ */
+#endif  /* PERI_USBC_H_ */
 

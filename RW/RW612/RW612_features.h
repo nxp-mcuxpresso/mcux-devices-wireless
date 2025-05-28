@@ -1,7 +1,7 @@
 /*
 ** ###################################################################
 **     Version:             rev. 1.0, 2021-03-16
-**     Build:               b250409
+**     Build:               b250512
 **
 **     Abstract:
 **         Chip specific module features.
@@ -167,7 +167,7 @@
 
 /* CDOG module features */
 
-/* @brief CDOG Has No Reset */
+/* @brief SOC has no reset driver. */
 #define FSL_FEATURE_CDOG_HAS_NO_RESET (1)
 /* @brief CDOG Load default configurations during init function */
 #define FSL_FEATURE_CDOG_NEED_LOAD_DEFAULT_CONF (1)
