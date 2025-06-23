@@ -1,7 +1,7 @@
 /*
 ** ###################################################################
 **     Version:             rev. 1.0, 2021-03-16
-**     Build:               b250512
+**     Build:               b250603
 **
 **     Abstract:
 **         Chip specific module features.
@@ -172,11 +172,6 @@
 /* @brief CDOG Load default configurations during init function */
 #define FSL_FEATURE_CDOG_NEED_LOAD_DEFAULT_CONF (1)
 
-/* CRC module features */
-
-/* @brief Has data register with name CRC */
-#define FSL_FEATURE_CRC_HAS_CRC_REG (0)
-
 /* CTIMER module features */
 
 /* @brief CTIMER has no capture channel. */
@@ -335,6 +330,8 @@
 #define FSL_FEATURE_FLEXSPI_ARRAY_LEN (1)
 /* @brief FlexSPI Has ERRATA052733 */
 #define FSL_FEATURE_FLEXSPI_HAS_ERRATA_052733 (1)
+/* @brief FlexSPI has AHBCR RESUMEDISABLE bit */
+#define FSL_FEATURE_FLEXSPI_HAS_RESUMEDISABLE_BIT_CONFIG_SUPPORT (1)
 
 /* ADC module features */
 
