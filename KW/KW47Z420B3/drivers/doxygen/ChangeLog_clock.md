@@ -1,5 +1,10 @@
 # CLOCK
 
+## [2.1.2]
+
+- Improvements:
+  - Added comments for ERR052742: FRO6M clock is not stable.
+
 ## [2.1.1]
 
 - New Features:
