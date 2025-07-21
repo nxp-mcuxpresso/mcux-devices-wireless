@@ -8,7 +8,7 @@
 **
 **     Reference manual:    Rev. 2, Jan. 6, 2022
 **     Version:             rev. 2.0, 2024-10-29
-**     Build:               b250520
+**     Build:               b250717
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for K32W1480
@@ -2212,14 +2212,14 @@ typedef enum IRQn {
  * @param value Value of the bit field.
  * @return Masked and shifted value.
  */
-#define NXP_VAL2FLD(field, value)    (((value) << (field ## _SHIFT)) & (field ## _MASK))
+#define NXP_VAL2FLD(field, value)    (((value) << (field##_SHIFT)) & (field##_MASK))
 /**
  * @brief Mask and right-shift a register value to extract a bit field value.
  * @param field Name of the register bit field.
  * @param value Value of the register.
  * @return Masked and shifted bit field value.
  */
-#define NXP_FLD2VAL(field, value)    (((value) & (field ## _MASK)) >> (field ## _SHIFT))
+#define NXP_FLD2VAL(field, value)    (((value) & (field##_MASK)) >> (field##_SHIFT))
 
 /*!
  * @}
@@ -2241,6 +2241,43 @@ typedef enum IRQn {
 /*! @brief define LTC0 from LTC. */
 #define LTC0 LTC
 
+#define PLATFORM_CTCM0_IDX 0U
+#define PLATFORM_CTCM1_IDX 1U
+#define PLATFORM_STCM0_IDX 2U
+#define PLATFORM_STCM1_IDX 3U
+#define PLATFORM_STCM2_IDX 4U
+#define PLATFORM_STCM3_IDX 5U
+#define PLATFORM_STCM4_IDX 6U
+#define PLATFORM_STCM5_IDX 7U
+
+#define PLATFORM_CTCM0_START_ADDR (0x04000000U)
+#define PLATFORM_CTCM0_END_ADDR   (0x04001FFFU)
+#define PLATFORM_CTCM1_START_ADDR (0x04002000U)
+#define PLATFORM_CTCM1_END_ADDR   (0x04003FFFU)
+#define PLATFORM_STCM0_START_ADDR (0x20000000U)
+#define PLATFORM_STCM0_END_ADDR   (0x20003FFFU)
+#define PLATFORM_STCM1_START_ADDR (0x20004000U)
+#define PLATFORM_STCM1_END_ADDR   (0x20007FFFU)
+#define PLATFORM_STCM2_START_ADDR (0x20008000U)
+#define PLATFORM_STCM2_END_ADDR   (0x2000FFFFU)
+#define PLATFORM_STCM3_START_ADDR (0x20010000U)
+#define PLATFORM_STCM3_END_ADDR   (0x20017FFFU)
+#define PLATFORM_STCM4_START_ADDR (0x20018000U)
+#define PLATFORM_STCM4_END_ADDR   (0x20019FFFU)
+#define PLATFORM_STCM5_START_ADDR (0x2001A000U)
+#define PLATFORM_STCM5_END_ADDR   (0x2001BFFFU)
+
+#define PLATFORM_BANK_START_ADDR                                                                                \
+    PLATFORM_CTCM0_START_ADDR, PLATFORM_CTCM1_START_ADDR, PLATFORM_STCM0_START_ADDR, PLATFORM_STCM1_START_ADDR, \
+        PLATFORM_STCM2_START_ADDR, PLATFORM_STCM3_START_ADDR, PLATFORM_STCM4_START_ADDR, PLATFORM_STCM5_START_ADDR
+
+#define PLATFORM_BANK_END_ADDR                                                                          \
+    PLATFORM_CTCM0_END_ADDR, PLATFORM_CTCM1_END_ADDR, PLATFORM_STCM0_END_ADDR, PLATFORM_STCM1_END_ADDR, \
+        PLATFORM_STCM2_END_ADDR, PLATFORM_STCM3_END_ADDR, PLATFORM_STCM4_END_ADDR, PLATFORM_STCM5_END_ADDR
+
+#define PLATFORM_BANK_IS_ECC TRUE, TRUE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE
+
+#define PLATFORM_VBAT_LDORAM_IDX PLATFORM_STCM5_IDX
 
 /*!
  * @}
