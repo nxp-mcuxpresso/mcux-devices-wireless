@@ -20,7 +20,7 @@
 **                          KW47Z420B3AFTA
 **
 **     Version:             rev. 2.0, 2024-10-29
-**     Build:               b250716
+**     Build:               b250730
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for SPC
@@ -476,7 +476,7 @@ typedef struct {
 #define SPC_ACTIVE_CFG_CORELDO_VDD_LVL_SHIFT     (2U)
 /*! CORELDO_VDD_LVL - LDO_CORE VDD Regulator Voltage Level
  *  0b00..Regulate to boost voltage (0.95 V)
- *  0b01..Regulate to mid voltage (1 V)
+ *  0b01..Regulate to mid voltage (1.0 V)
  *  0b10..Regulate to normal voltage (1.1 V)
  *  0b11..Regulate to safe-mode voltage (1.15 V)
  */
@@ -606,7 +606,7 @@ typedef struct {
 #define SPC_LP_CFG_CORELDO_VDD_LVL_SHIFT         (2U)
 /*! CORELDO_VDD_LVL - LDO_CORE VDD Regulator Voltage Level
  *  0b00..Retention voltage
- *  0b01..Mid voltage (1 V)
+ *  0b01..Mid voltage (1.0 V)
  *  0b10..Normal voltage (1.1 V)
  *  0b11..Safe-mode voltage (1.15 V)
  */
@@ -746,7 +746,7 @@ typedef struct {
 #define SPC_HP_CFG_CORELDO_VDD_LVL_SHIFT         (2U)
 /*! CORELDO_VDD_LVL - LDO_CORE VDD Regulator Voltage Level
  *  0b00..Regulate to under voltage (0.95 V)
- *  0b01..Regulate to mid voltage (1 V)
+ *  0b01..Regulate to mid voltage (1.0 V)
  *  0b10..Regulate to normal voltage (1.1 V)
  *  0b11..Regulate to safe-mode voltage (1.15 V)
  */

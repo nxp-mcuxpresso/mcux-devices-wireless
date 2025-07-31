@@ -8,7 +8,7 @@
 **
 **     Reference manual:    Rev. 2, 2025-05-01
 **     Version:             rev. 2.0, 2024-10-29
-**     Build:               b250721
+**     Build:               b250730
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for KW47Z42082
@@ -1800,6 +1800,7 @@ static inline uint8_t Chip_GetVersion(void)
 #endif
 
 #define PLATFORM_BANK_IS_ECC TRUE, TRUE, TRUE, TRUE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE
+
 #define PLATFORM_VBAT_LDORAM_IDX PLATFORM_STCM8_IDX
 
 #elif defined(KW47B42Z83_cm33_core1_H_) || defined(KW47B42Z96_cm33_core1_H_) || defined(KW47B42Z97_cm33_core1_H_) || defined(KW47B42ZB2_cm33_core1_H_) || defined(KW47B42ZB3_cm33_core1_H_) || defined(KW47B42ZB6_cm33_core1_H_) || defined(KW47B42ZB7_cm33_core1_H_)
