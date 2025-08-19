@@ -1,7 +1,7 @@
 /*
 ** ###################################################################
 **     Version:             rev. 1.0, 2021-03-16
-**     Build:               b250707
+**     Build:               b250815
 **
 **     Abstract:
 **         Chip specific module features.
@@ -232,7 +232,7 @@
 /* @brief Has Additional 1588 Timer Channel Interrupt. */
 #define FSL_FEATURE_ENET_HAS_ADD_1588_TIMER_CHN_INT (0)
 /* @brief Support Interrupt Coalesce for each instance */
-#define FSL_FEATURE_ENET_INSTANCE_HAS_INTERRUPT_COALESCEn(x) (0)
+#define FSL_FEATURE_ENET_INSTANCE_HAS_INTERRUPT_COALESCEn(x) (1)
 /* @brief Queue Size for each instance. */
 #define FSL_FEATURE_ENET_INSTANCE_QUEUEn(x) (1)
 /* @brief Has AVB Support for each instance. */
@@ -245,11 +245,13 @@
 #define FSL_FEATURE_ENET_INSTANCE_HAS_ADD_1588_TIMER_CHN_INTn(x) (0)
 /* @brief Has threshold for the number of frames in the receive FIFO (register bit field RSEM[STAT_SECTION_EMPTY]). */
 #define FSL_FEATURE_ENET_HAS_RECEIVE_STATUS_THRESHOLD (1)
-/* @brief Has trasfer clock delay (register bit field ECR[TXC_DLY]). */
+/* @brief Has transfer clock delay (register bit field ECR[TXC_DLY]). */
 #define FSL_FEATURE_ENET_HAS_RGMII_TXC_DELAY (0)
 /* @brief Has receive clock delay (register bit field ECR[RXC_DLY]). */
 #define FSL_FEATURE_ENET_HAS_RGMII_RXC_DELAY (0)
-/* @brief ENET Has Extra Clock Gate.(RW610). */
+/* @brief PTP Timestamp CAPTURE bit always returns 0 when the capture is not over. */
+#define FSL_FEATURE_ENET_TIMESTAMP_CAPTURE_BIT_INVALID (0)
+/* @brief ENET Has Extra Clock Gate (RW610). */
 #define FSL_FEATURE_ENET_HAS_EXTRA_CLOCK_GATE (1)
 /* @brief ENET support reset. */
 #define FSL_FEATURE_ENET_HAS_RSTCTL (1)
@@ -438,6 +440,8 @@
 #define FSL_FEATURE_SCT_NUMBER_OF_MATCH_CAPTURE (16)
 /* @brief Number of outputs */
 #define FSL_FEATURE_SCT_NUMBER_OF_OUTPUTS (10)
+/* @brief Writing a zero asserts the SCT reset. */
+#define FSL_FEATURE_SCT_WRITE_ZERO_ASSERT_RESET (0)
 
 /* SPI module features */
 
@@ -493,6 +497,10 @@
 #define FSL_FEATURE_WWDT_HAS_NO_OSCILLATOR_LOCK (0)
 /* @brief WWDT does not support power down configure. */
 #define FSL_FEATURE_WWDT_HAS_NO_PDCFG (1)
+/* @brief Has LPOSC as clock source. */
+#define FSL_FEATURE_WWDT_HAS_LPOSC_CLOCK_SOURCE (0)
+/* @brief WWDT WDTOF is not set in case of WD reset - get info from PMC instead. */
+#define FSL_FEATURE_WWDT_WDTRESET_FROM_PMC (0)
 
 #endif /* _RW612_FEATURES_H_ */
 

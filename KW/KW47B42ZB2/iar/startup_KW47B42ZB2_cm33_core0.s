@@ -4,7 +4,7 @@
 ;            KW47B42ZB2_cm33_core0
 ;  @version: 2.0
 ;  @date:    2024-10-29
-;  @build:   b250716
+;  @build:   b250730
 ; -------------------------------------------------------------------------
 ;
 ; Copyright 1997-2016 Freescale Semiconductor, Inc.

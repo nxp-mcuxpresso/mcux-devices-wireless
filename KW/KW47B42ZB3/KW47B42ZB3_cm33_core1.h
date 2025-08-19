@@ -8,7 +8,7 @@
 **
 **     Reference manual:    Rev. 2, 2025-05-01
 **     Version:             rev. 2.0, 2024-10-29
-**     Build:               b250716
+**     Build:               b250730
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for KW47B42ZB3_cm33_core1
