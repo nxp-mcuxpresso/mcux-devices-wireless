@@ -295,7 +295,7 @@
 /* @brief P-Flash block count. */
 #define FSL_FEATURE_FLASH_PFLASH_BLOCK_COUNT (1u)
 /* @brief P-Flash block size. */
-#define FSL_FEATURE_FLASH_PFLASH_BLOCK_SIZE (0x200000u)
+#define FSL_FEATURE_FLASH_PFLASH_BLOCK_SIZE (0x100000u)
 /* @brief P-Flash block size. */
 #define FSL_FEATURE_FLASH_PFLASH_BLOCK_SIZE_512KB (0x80000u)
 /* @brief Flash sector size. */
