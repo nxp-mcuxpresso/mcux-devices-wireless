@@ -1,5 +1,9 @@
 # POWER
 
+## [2.6.0]
+
+- Added new Brown-out detection APIs POWER\_EnableBodMonitor() and POWER\_DisableBodMonitor().
+
 ## [2.5.3]
 
 - Fixed MSG issues. No function change. 
