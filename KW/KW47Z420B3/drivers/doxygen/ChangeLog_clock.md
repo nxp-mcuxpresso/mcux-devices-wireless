@@ -1,5 +1,11 @@
 # CLOCK
 
+## [2.1.4]
+
+- Improvements:
+  - Extend PORT_CLOCKS and GPIO_CLOCKS definitions to include kCLOCK_NOGATE.
+  - Fix assertion issue when calling GPIO_PinInit API with GPIOD as first parameter.
+
 ## [2.1.3]
 
 - Bug Fixes:
