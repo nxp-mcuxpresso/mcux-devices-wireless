@@ -169,7 +169,7 @@ uint32_t CLOCK_GetIpFreq(clock_ip_name_t name)
     uint32_t reg = CLOCK_REG(name);
     uint32_t freq;
 
-    assert(reg & MRCC_PR_MASK);
+    assert(0U != (reg & MRCC_PR_MASK));
 
     switch (name)
     {
@@ -323,7 +323,7 @@ uint32_t CLOCK_GetSysClkFreq(scg_sys_clk_t type)
  */
 status_t CLOCK_InitSysOsc(const scg_sosc_config_t *config)
 {
-    assert(config);
+    assert(NULL != config);
     status_t status;
 
     /* De-init the SOSC first. */
@@ -389,7 +389,7 @@ uint32_t CLOCK_GetSysOscFreq(void)
         SCG_SOSCCSR_SOSCVLD_MASK) /* System OSC clock is valid. */
     {
         /* Please call CLOCK_SetXtal0Freq base on board setting before using OSC0 clock. */
-        assert(g_xtal0Freq);
+        assert(0U != g_xtal0Freq);
         return g_xtal0Freq;
     }
     else
@@ -414,7 +414,7 @@ uint32_t CLOCK_GetSysOscFreq(void)
  */
 status_t CLOCK_InitSirc(const scg_sirc_config_t *config)
 {
-    assert(config);
+    assert(NULL != config);
 
     status_t status;
 
@@ -513,7 +513,7 @@ uint32_t CLOCK_GetSircFreq(void)
  */
 status_t CLOCK_InitFirc(const scg_firc_config_t *config)
 {
-    assert(config);
+    assert(NULL != config);
 
     status_t status;
 
@@ -629,7 +629,7 @@ uint32_t CLOCK_GetFircFreq(void)
  */
 status_t CLOCK_InitRosc(const scg_rosc_config_t *config)
 {
-    assert(config);
+    assert(NULL != config);
     status_t status;
 
     /* De-init the ROSC first. */
@@ -693,7 +693,7 @@ uint32_t CLOCK_GetRtcOscFreq(void)
         SCG_ROSCCSR_ROSCVLD_MASK) /* RTC OSC clock is valid. */
     {
         /* Please call CLOCK_SetXtal32Freq base on board setting before using RTC OSC clock. */
-        assert(g_xtal32Freq);
+        assert(0U != g_xtal32Freq);
         return g_xtal32Freq;
     }
     else

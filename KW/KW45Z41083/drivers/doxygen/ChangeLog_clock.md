@@ -1,5 +1,10 @@
 # CLOCK
 
+# [2.1.4]
+
+- Improvements
+  - Fixed violations of the MISRA C-2012 Rule 10.1.
+
 ## [2.1.3]
 
 - Bug Fixes:
