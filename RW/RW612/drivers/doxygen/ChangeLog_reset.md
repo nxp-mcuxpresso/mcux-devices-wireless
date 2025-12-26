@@ -1,5 +1,10 @@
 # RESET
 
+## [2.1.2]
+
+- Improvements
+  - Added reset arrays for several peripherals.
+
 ## [2.1.1]
 
 - Corrected XX_RSTS definitions.
