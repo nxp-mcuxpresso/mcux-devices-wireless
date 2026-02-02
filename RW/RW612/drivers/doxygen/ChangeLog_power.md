@@ -1,5 +1,9 @@
 # POWER
 
+## [2.6.1]
+
+- Fixed buck leakage issue in PM3/4.
+
 ## [2.6.0]
 
 - Added new Brown-out detection APIs POWER\_EnableBodMonitor() and POWER\_DisableBodMonitor().
