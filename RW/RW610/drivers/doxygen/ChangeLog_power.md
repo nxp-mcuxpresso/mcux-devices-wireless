@@ -1,5 +1,9 @@
 # POWER
 
+## [2.6.2]
+
+- PM3 case, fix CPU resume from PM2 randomly, trigger ITRC cause RW610 reset issue.
+
 ## [2.6.1]
 
 - Fix buck leakage issue in PM3/4.
