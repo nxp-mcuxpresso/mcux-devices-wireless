@@ -400,22 +400,22 @@ typedef enum _scg_sys_clk_src
  */
 typedef enum _scg_sys_clk_div
 {
-    kSCG_SysClkDivBy1  = 1U,  /*!< Divided by 1.  */
-    kSCG_SysClkDivBy2  = 2U,  /*!< Divided by 2.  */
-    kSCG_SysClkDivBy3  = 3U,  /*!< Divided by 3.  */
-    kSCG_SysClkDivBy4  = 4U,  /*!< Divided by 4.  */
-    kSCG_SysClkDivBy5  = 5U,  /*!< Divided by 5.  */
-    kSCG_SysClkDivBy6  = 6U,  /*!< Divided by 6.  */
-    kSCG_SysClkDivBy7  = 7U,  /*!< Divided by 7.  */
-    kSCG_SysClkDivBy8  = 8U,  /*!< Divided by 8.  */
-    kSCG_SysClkDivBy9  = 9U,  /*!< Divided by 9.  */
-    kSCG_SysClkDivBy10 = 10U, /*!< Divided by 10. */
-    kSCG_SysClkDivBy11 = 11U, /*!< Divided by 11. */
-    kSCG_SysClkDivBy12 = 12U, /*!< Divided by 12. */
-    kSCG_SysClkDivBy13 = 13U, /*!< Divided by 13. */
-    kSCG_SysClkDivBy14 = 14U, /*!< Divided by 14. */
-    kSCG_SysClkDivBy15 = 15U, /*!< Divided by 15. */
-    kSCG_SysClkDivBy16 = 16U  /*!< Divided by 16. */
+    kSCG_SysClkDivBy1  = 0U,  /*!< Divided by 1.  */
+    kSCG_SysClkDivBy2  = 1U,  /*!< Divided by 2.  */
+    kSCG_SysClkDivBy3  = 2U,  /*!< Divided by 3.  */
+    kSCG_SysClkDivBy4  = 3U,  /*!< Divided by 4.  */
+    kSCG_SysClkDivBy5  = 4U,  /*!< Divided by 5.  */
+    kSCG_SysClkDivBy6  = 5U,  /*!< Divided by 6.  */
+    kSCG_SysClkDivBy7  = 6U,  /*!< Divided by 7.  */
+    kSCG_SysClkDivBy8  = 7U,  /*!< Divided by 8.  */
+    kSCG_SysClkDivBy9  = 8U,  /*!< Divided by 9.  */
+    kSCG_SysClkDivBy10 = 9U,  /*!< Divided by 10. */
+    kSCG_SysClkDivBy11 = 10U, /*!< Divided by 11. */
+    kSCG_SysClkDivBy12 = 11U, /*!< Divided by 12. */
+    kSCG_SysClkDivBy13 = 12U, /*!< Divided by 13. */
+    kSCG_SysClkDivBy14 = 13U, /*!< Divided by 14. */
+    kSCG_SysClkDivBy15 = 14U, /*!< Divided by 15. */
+    kSCG_SysClkDivBy16 = 15U  /*!< Divided by 16. */
 } scg_sys_clk_div_t;
 
 /*!
