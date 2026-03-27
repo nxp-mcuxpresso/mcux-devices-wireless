@@ -463,11 +463,11 @@
 /* @brief Has internal temperature sensor. */
 #define FSL_FEATURE_LPADC_HAS_INTERNAL_TEMP_SENSOR (1)
 /* @brief Temperature sensor parameter A (slope). */
-#define FSL_FEATURE_LPADC_TEMP_PARAMETER_A (787U)
+#define FSL_FEATURE_LPADC_TEMP_PARAMETER_A (738U)
 /* @brief Temperature sensor parameter B (offset). */
-#define FSL_FEATURE_LPADC_TEMP_PARAMETER_B (289U)
+#define FSL_FEATURE_LPADC_TEMP_PARAMETER_B (287.5f)
 /* @brief Temperature sensor parameter Alpha. */
-#define FSL_FEATURE_LPADC_TEMP_PARAMETER_ALPHA (9.1f)
+#define FSL_FEATURE_LPADC_TEMP_PARAMETER_ALPHA (10.06f)
 /* @brief The buffer size of temperature sensor. */
 #define FSL_FEATURE_LPADC_TEMP_SENS_BUFFER_SIZE (2U)
 
