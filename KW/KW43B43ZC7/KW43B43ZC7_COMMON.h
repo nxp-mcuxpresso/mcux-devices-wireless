@@ -2860,6 +2860,7 @@ typedef enum IRQn {
 #define SPC0 SPC_0
 #define WUU0 WUU_0
 #define MRCC MRCC_0
+#define TRNG0 TRNG_0
 #define INTM0 INTM_0
 #define GPIOA GPIO_A
 #define GPIOB GPIO_B
