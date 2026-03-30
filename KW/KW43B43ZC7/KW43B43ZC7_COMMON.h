@@ -2870,7 +2870,7 @@ typedef enum IRQn {
 #define PORTB PORT_B
 #define PORTC PORT_C
 #define PORTD PORT_D
-#define RF_SFA SFA_1
+#define RF_SFA SFA_0
 #define LPSPI0 LPSPI_0
 #define LPSPI1 LPSPI_1
 #define LPSPI2 LPSPI_2
