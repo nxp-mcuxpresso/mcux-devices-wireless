@@ -2881,6 +2881,9 @@ typedef enum IRQn {
 #define MU1_MUA MU_1__MUA
 #define MU1_MUB MU_1__MUB
 #define PORTA_BASE PORT_A_BASE
+#define LPUART0 LPUART_0
+#define LPUART1 LPUART_1
+#define ADC0 HSADC_0
 
 #define NXP_RADIO_GEN (475)
 #define RADIO_IS_GEN_4P7 (1)
