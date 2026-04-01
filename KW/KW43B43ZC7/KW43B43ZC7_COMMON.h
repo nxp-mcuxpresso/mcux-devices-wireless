@@ -1942,6 +1942,9 @@ typedef enum IRQn {
   /** Array initializer of RTC peripheral base pointers */
   #define RTC_BASE_PTRS                            { SRTC_0 }
 #endif
+/** Interrupt vectors for the RTC peripheral type */
+#define RTC_IRQS                                 { RTC_Alarm_IRQn }
+#define RTC_SECONDS_IRQS                         { RTC_Seconds_IRQn }
 
 /* RTU - Peripheral instance base addresses */
 #if (defined(__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE & 0x2))
