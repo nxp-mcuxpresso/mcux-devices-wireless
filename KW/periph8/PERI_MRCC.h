@@ -3285,7 +3285,12 @@ typedef struct {
 #define MRCC_PR_MASK                              (0x80000000U)
 #define MRCC_PR_SHIFT                             (31U)
 #define MRCC_PR(x)                                (((uint32_t)(((uint32_t)(x)) << MRCC_PR_SHIFT))  & MRCC_PR_MASK)
-
+#define MRCC_RESET_MASK                           (0x20000000U)
+#define MRCC_RESET_SHIFT                          (29U)
+#define MRCC_RESET(x)                             (((uint32_t)(((uint32_t)(x)) << MRCC_RESET_SHIFT))  & MRCC_RESET_MASK)
+#define MRCC_HALT_MASK                            (0x40000000U)
+#define MRCC_HALT_SHIFT                           (30U)
+#define MRCC_HALT(x)                              (((uint32_t)(((uint32_t)(x)) << MRCC_HALT_SHIFT))  & MRCC_HALT_MASK)
 
 /*!
  * @}
