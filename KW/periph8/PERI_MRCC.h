@@ -10,7 +10,7 @@
 **                          KW43L43Z97MFT
 **
 **     Version:             rev. 1.0, 2020-05-12
-**     Build:               b260316
+**     Build:               b260407
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for MRCC
@@ -3291,6 +3291,7 @@ typedef struct {
 #define MRCC_HALT_MASK                            (0x40000000U)
 #define MRCC_HALT_SHIFT                           (30U)
 #define MRCC_HALT(x)                              (((uint32_t)(((uint32_t)(x)) << MRCC_HALT_SHIFT))  & MRCC_HALT_MASK)
+
 
 /*!
  * @}

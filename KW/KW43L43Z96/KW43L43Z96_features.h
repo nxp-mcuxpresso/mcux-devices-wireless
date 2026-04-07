@@ -1,7 +1,7 @@
 /*
 ** ###################################################################
 **     Version:             rev. 1.0, 2026-01-09
-**     Build:               b260316
+**     Build:               b260407
 **
 **     Abstract:
 **         Chip specific module features.
@@ -95,8 +95,6 @@
 #define FSL_FEATURE_SOC_SEMA42_COUNT (1)
 /* @brief SFA availability on the SoC. */
 #define FSL_FEATURE_SOC_SFA_COUNT (2)
-/* @brief SYSCON availability on the SoC. */
-#define FSL_FEATURE_SOC_SYSCON_COUNT (1)
 /* @brief SYSPM availability on the SoC. */
 #define FSL_FEATURE_SOC_SYSPM_COUNT (1)
 /* @brief TPM availability on the SoC. */
@@ -388,11 +386,11 @@
 /* @brief Has internal temperature sensor. */
 #define FSL_FEATURE_LPADC_HAS_INTERNAL_TEMP_SENSOR (1)
 /* @brief Temperature sensor parameter A (slope). */
-#define FSL_FEATURE_LPADC_TEMP_PARAMETER_A (787U)
+#define FSL_FEATURE_LPADC_TEMP_PARAMETER_A (738U)
 /* @brief Temperature sensor parameter B (offset). */
-#define FSL_FEATURE_LPADC_TEMP_PARAMETER_B (289U)
+#define FSL_FEATURE_LPADC_TEMP_PARAMETER_B (287.5f)
 /* @brief Temperature sensor parameter Alpha. */
-#define FSL_FEATURE_LPADC_TEMP_PARAMETER_ALPHA (9.1f)
+#define FSL_FEATURE_LPADC_TEMP_PARAMETER_ALPHA (10.06f)
 /* @brief The buffer size of temperature sensor. */
 #define FSL_FEATURE_LPADC_TEMP_SENS_BUFFER_SIZE (2U)
 

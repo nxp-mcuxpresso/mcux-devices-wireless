@@ -8,7 +8,7 @@
 **
 **     Reference manual:    Rev. 1 Draft F, 2025-10-18
 **     Version:             rev. 1.0, 2020-05-12
-**     Build:               b260316
+**     Build:               b260407
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for KW43L43Z93
@@ -247,6 +247,8 @@ typedef enum IRQn {
   /** Array initializer of ADC peripheral base pointers */
   #define ADC_BASE_PTRS                            { HSADC_0 }
 #endif
+/** Interrupt vectors for the ADC peripheral type */
+#define ADC_IRQS                                 { ADC0_IRQn }
 
 /* AOI - Peripheral instance base addresses */
 #if (defined(__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE & 0x2))
@@ -1516,35 +1518,6 @@ typedef enum IRQn {
   #define MSCM_BASE_ADDRS                          { MSCM_BASE }
   /** Array initializer of MSCM peripheral base pointers */
   #define MSCM_BASE_PTRS                           { MSCM }
-#endif
-
-/* MSF1_B_test - Peripheral instance base addresses */
-#if (defined(__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE & 0x2))
-  /** Peripheral TEST base address */
-  #define TEST_BASE                                (0x50032000u)
-  /** Peripheral TEST base address */
-  #define TEST_BASE_NS                             (0x40032000u)
-  /** Peripheral TEST base pointer */
-  #define TEST                                     ((MSF1_B_test_Type *)TEST_BASE)
-  /** Peripheral TEST base pointer */
-  #define TEST_NS                                  ((MSF1_B_test_Type *)TEST_BASE_NS)
-  /** Array initializer of MSF1_B_test peripheral base addresses */
-  #define MSF1_B_test_BASE_ADDRS                   { TEST_BASE }
-  /** Array initializer of MSF1_B_test peripheral base pointers */
-  #define MSF1_B_test_BASE_PTRS                    { TEST }
-  /** Array initializer of MSF1_B_test peripheral base addresses */
-  #define MSF1_B_test_BASE_ADDRS_NS                { TEST_BASE_NS }
-  /** Array initializer of MSF1_B_test peripheral base pointers */
-  #define MSF1_B_test_BASE_PTRS_NS                 { TEST_NS }
-#else
-  /** Peripheral TEST base address */
-  #define TEST_BASE                                (0x40032000u)
-  /** Peripheral TEST base pointer */
-  #define TEST                                     ((MSF1_B_test_Type *)TEST_BASE)
-  /** Array initializer of MSF1_B_test peripheral base addresses */
-  #define MSF1_B_test_BASE_ADDRS                   { TEST_BASE }
-  /** Array initializer of MSF1_B_test peripheral base pointers */
-  #define MSF1_B_test_BASE_PTRS                    { TEST }
 #endif
 
 /* MU - Peripheral instance base addresses */
@@ -2851,13 +2824,22 @@ typedef enum IRQn {
  * @{
  */
 
+#define RTC  SRTC_0
+#define CDOG CDOG_0
 #define FMU0 FMU
+#define PKC0 PKC
+#define CAN0 CAN_0
+#define CRC0 CRC_0
 #define SCG0 SCG_0
+#define SFA0 SFA_0
 #define CMC0 CMC_0
 #define DSB0 DSB_0
+#define SGI0 SGI_0
 #define SPC0 SPC_0
 #define WUU0 WUU_0
 #define MRCC MRCC_0
+#define TRNG0 TRNG_0
+#define INTM0 INTM_0
 #define GPIOA GPIO_A
 #define GPIOB GPIO_B
 #define GPIOC GPIO_C
@@ -2866,9 +2848,11 @@ typedef enum IRQn {
 #define PORTB PORT_B
 #define PORTC PORT_C
 #define PORTD PORT_D
+#define RF_SFA SFA_0
 #define LPSPI0 LPSPI_0
 #define LPSPI1 LPSPI_1
 #define LPSPI2 LPSPI_2
+#define LPCMP0 CMP_0
 #define LPTMR0 LPTMR_0
 #define CCM32K ANAREG_0
 #define MU0_MUA MU_0__MUA
@@ -2876,9 +2860,9 @@ typedef enum IRQn {
 #define MU1_MUA MU_1__MUA
 #define MU1_MUB MU_1__MUB
 #define PORTA_BASE PORT_A_BASE
-
-#define FPGA_TARGET 1
-#define FPGA_SUPPORT 1
+#define LPUART0 LPUART_0
+#define LPUART1 LPUART_1
+#define ADC0 HSADC_0
 
 #define NXP_RADIO_GEN (475)
 #define RADIO_IS_GEN_4P7 (1)

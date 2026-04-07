@@ -8,7 +8,7 @@
 **
 **     Reference manual:    Rev. 1 Draft F, 2025-10-18
 **     Version:             rev. 1.0, 2020-05-12
-**     Build:               b260316
+**     Build:               b260407
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for KW43B43ZC7
@@ -1520,35 +1520,6 @@ typedef enum IRQn {
   #define MSCM_BASE_PTRS                           { MSCM }
 #endif
 
-/* MSF1_B_test - Peripheral instance base addresses */
-#if (defined(__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE & 0x2))
-  /** Peripheral TEST base address */
-  #define TEST_BASE                                (0x50032000u)
-  /** Peripheral TEST base address */
-  #define TEST_BASE_NS                             (0x40032000u)
-  /** Peripheral TEST base pointer */
-  #define TEST                                     ((MSF1_B_test_Type *)TEST_BASE)
-  /** Peripheral TEST base pointer */
-  #define TEST_NS                                  ((MSF1_B_test_Type *)TEST_BASE_NS)
-  /** Array initializer of MSF1_B_test peripheral base addresses */
-  #define MSF1_B_test_BASE_ADDRS                   { TEST_BASE }
-  /** Array initializer of MSF1_B_test peripheral base pointers */
-  #define MSF1_B_test_BASE_PTRS                    { TEST }
-  /** Array initializer of MSF1_B_test peripheral base addresses */
-  #define MSF1_B_test_BASE_ADDRS_NS                { TEST_BASE_NS }
-  /** Array initializer of MSF1_B_test peripheral base pointers */
-  #define MSF1_B_test_BASE_PTRS_NS                 { TEST_NS }
-#else
-  /** Peripheral TEST base address */
-  #define TEST_BASE                                (0x40032000u)
-  /** Peripheral TEST base pointer */
-  #define TEST                                     ((MSF1_B_test_Type *)TEST_BASE)
-  /** Array initializer of MSF1_B_test peripheral base addresses */
-  #define MSF1_B_test_BASE_ADDRS                   { TEST_BASE }
-  /** Array initializer of MSF1_B_test peripheral base pointers */
-  #define MSF1_B_test_BASE_PTRS                    { TEST }
-#endif
-
 /* MU - Peripheral instance base addresses */
 #if (defined(__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE & 0x2))
   /** Peripheral MU_0__MUA base address */
@@ -2852,14 +2823,18 @@ typedef enum IRQn {
  * @addtogroup SDK_Compatibility_Symbols SDK Compatibility
  * @{
  */
+
 #define RTC  SRTC_0
 #define CDOG CDOG_0
 #define FMU0 FMU
+#define PKC0 PKC
 #define CAN0 CAN_0
+#define CRC0 CRC_0
 #define SCG0 SCG_0
 #define SFA0 SFA_0
 #define CMC0 CMC_0
 #define DSB0 DSB_0
+#define SGI0 SGI_0
 #define SPC0 SPC_0
 #define WUU0 WUU_0
 #define MRCC MRCC_0
@@ -2877,6 +2852,7 @@ typedef enum IRQn {
 #define LPSPI0 LPSPI_0
 #define LPSPI1 LPSPI_1
 #define LPSPI2 LPSPI_2
+#define LPCMP0 CMP_0
 #define LPTMR0 LPTMR_0
 #define CCM32K ANAREG_0
 #define MU0_MUA MU_0__MUA
