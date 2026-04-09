@@ -8,7 +8,7 @@
 **
 **     Reference manual:    Rev. 1 Draft F, 2025-10-18
 **     Version:             rev. 1.0, 2020-05-12
-**     Build:               b260407
+**     Build:               b260410
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for KW43L43Z93
@@ -1462,6 +1462,16 @@ typedef enum IRQn {
   #define LTC_BASE_PTRS                            { LTC }
 #endif
 
+/* MCM - Peripheral instance base addresses */
+/** Peripheral PPB_MCM2_CM4 base address */
+#define PPB_MCM2_CM4_BASE                        (0xE0080000u)
+/** Peripheral PPB_MCM2_CM4 base pointer */
+#define PPB_MCM2_CM4                             ((MCM_Type *)PPB_MCM2_CM4_BASE)
+/** Array initializer of MCM peripheral base addresses */
+#define MCM_BASE_ADDRS                           { PPB_MCM2_CM4_BASE }
+/** Array initializer of MCM peripheral base pointers */
+#define MCM_BASE_PTRS                            { PPB_MCM2_CM4 }
+
 /* MRCC - Peripheral instance base addresses */
 #if (defined(__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE & 0x2))
   /** Peripheral MRCC_0 base address */
@@ -1677,35 +1687,6 @@ typedef enum IRQn {
   #define PORT_BASE_ADDRS                          { PORT_A_BASE, PORT_B_BASE, PORT_C_BASE, PORT_D_BASE }
   /** Array initializer of PORT peripheral base pointers */
   #define PORT_BASE_PTRS                           { PORT_A, PORT_B, PORT_C, PORT_D }
-#endif
-
-/* PPB_MCM2_CM4 - Peripheral instance base addresses */
-#if (defined(__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE & 0x2))
-  /** Peripheral PPB_MCM2_CM4 base address */
-  #define PPB_MCM2_CM4_BASE                        (0xF0080000u)
-  /** Peripheral PPB_MCM2_CM4 base address */
-  #define PPB_MCM2_CM4_BASE_NS                     (0xE0080000u)
-  /** Peripheral PPB_MCM2_CM4 base pointer */
-  #define PPB_MCM2_CM4                             ((PPB_MCM2_CM4_Type *)PPB_MCM2_CM4_BASE)
-  /** Peripheral PPB_MCM2_CM4 base pointer */
-  #define PPB_MCM2_CM4_NS                          ((PPB_MCM2_CM4_Type *)PPB_MCM2_CM4_BASE_NS)
-  /** Array initializer of PPB_MCM2_CM4 peripheral base addresses */
-  #define PPB_MCM2_CM4_BASE_ADDRS                  { PPB_MCM2_CM4_BASE }
-  /** Array initializer of PPB_MCM2_CM4 peripheral base pointers */
-  #define PPB_MCM2_CM4_BASE_PTRS                   { PPB_MCM2_CM4 }
-  /** Array initializer of PPB_MCM2_CM4 peripheral base addresses */
-  #define PPB_MCM2_CM4_BASE_ADDRS_NS               { PPB_MCM2_CM4_BASE_NS }
-  /** Array initializer of PPB_MCM2_CM4 peripheral base pointers */
-  #define PPB_MCM2_CM4_BASE_PTRS_NS                { PPB_MCM2_CM4_NS }
-#else
-  /** Peripheral PPB_MCM2_CM4 base address */
-  #define PPB_MCM2_CM4_BASE                        (0xE0080000u)
-  /** Peripheral PPB_MCM2_CM4 base pointer */
-  #define PPB_MCM2_CM4                             ((PPB_MCM2_CM4_Type *)PPB_MCM2_CM4_BASE)
-  /** Array initializer of PPB_MCM2_CM4 peripheral base addresses */
-  #define PPB_MCM2_CM4_BASE_ADDRS                  { PPB_MCM2_CM4_BASE }
-  /** Array initializer of PPB_MCM2_CM4 peripheral base pointers */
-  #define PPB_MCM2_CM4_BASE_PTRS                   { PPB_MCM2_CM4 }
 #endif
 
 /* PWM - Peripheral instance base addresses */
@@ -2862,6 +2843,7 @@ typedef enum IRQn {
 #define PORTA_BASE PORT_A_BASE
 #define LPUART0 LPUART_0
 #define LPUART1 LPUART_1
+#define MCM PPB_MCM2_CM4
 #define ADC0 HSADC_0
 
 #define NXP_RADIO_GEN (475)
