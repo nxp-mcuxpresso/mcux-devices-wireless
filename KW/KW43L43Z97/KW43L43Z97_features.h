@@ -926,7 +926,7 @@
 /* TRDC module features */
 
 /* @brief Process master count. */
-#define FSL_FEATURE_TRDC_PROCESSOR_MASTER_COUNT (2)
+#define FSL_FEATURE_TRDC_PROCESSOR_MASTER_COUNT (1)
 /* @brief TRDC instance has PID configuration or not. */
 #define FSL_FEATURE_TRDC_INSTANCE_HAS_PID_CONFIGURATIONn(x) (0)
 /* @brief TRDC domain number (reset value of HWCFG0[NDID]). */

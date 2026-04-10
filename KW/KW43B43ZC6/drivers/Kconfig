@@ -6,4 +6,5 @@ menu "Device specific drivers configuration"
      rsource "../../KW43B43ZC7/drivers/Kconfig_clock"
      rsource "../../KW43B43ZC7/drivers/Kconfig_romapi"
      rsource "../../KW43B43ZC7/drivers/Kconfig_memory"
+     rsource "../../KW43B43ZC7/drivers/Kconfig_trdc_soc"
 endmenu
