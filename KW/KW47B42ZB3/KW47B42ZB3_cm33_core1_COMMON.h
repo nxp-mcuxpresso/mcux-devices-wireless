@@ -1056,7 +1056,6 @@ static inline uint8_t Chip_GetVersion(void)
 /*! @brief define LTC0 from LTC. */
 #define LTC0 LTC
 
-
 #endif
 
 /*!
