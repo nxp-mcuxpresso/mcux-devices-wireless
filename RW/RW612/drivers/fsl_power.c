@@ -868,7 +868,7 @@ AT_QUICKACCESS_SECTION_CODE(static bool POWER_PostPowerMode(uint32_t mode))
         initXip();
         SystemInit();
         POWER_RestoreNvicState();
-        BUCK18->BUCK_CTRL_ELEVEN_REG &= ~(BUCK18_BUCK_CTRL_ELEVEN_REG_USE_EXT_SUP(1));
+        BUCK18->BUCK_CTRL_ELEVEN_REG &= (uint8_t)(~(BUCK18_BUCK_CTRL_ELEVEN_REG_USE_EXT_SUP(1)));
     }
     else
     {

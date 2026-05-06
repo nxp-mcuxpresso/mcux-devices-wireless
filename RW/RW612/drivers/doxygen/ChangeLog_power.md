@@ -1,5 +1,13 @@
 # POWER
 
+## [2.6.4]
+
+- Fixed CERT INT31-C: Prevent data loss in integer type conversions.
+
+## [2.6.3]
+
+- Fixed PM3 wakeup sequence, to ensure cache operation after FlexSPI clock enablement.
+
 ## [2.6.2]
 
 - PM3 case, fix CPU resume from PM2 randomly, trigger ITRC cause RW612 reset issue.
