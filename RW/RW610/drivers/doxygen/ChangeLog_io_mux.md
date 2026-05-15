@@ -1,5 +1,25 @@
 # IO_MUX
 
+## [2.2.3]
+
+- Enhanced pin MUX capabilities. Enabled the below pin MUX values:
+    - IO_MUX_FC0_I2C_0_5
+    - IO_MUX_FC1_I2C_6_10
+    - IO_MUX_FC14_I2C_53_55
+    - IO_MUX_FC0_SPI_SS1
+    - IO_MUX_FC1_SPI_SS1
+    - IO_MUX_FC1_SPI_SS2
+    - IO_MUX_FC1_SPI_SS3
+    - IO_MUX_FC2_SPI_SS1
+    - IO_MUX_FC2_SPI_SS2
+    - IO_MUX_FC2_SPI_SS3
+    - IO_MUX_FC3_SPI_SS1
+    - IO_MUX_FC3_SPI_SS2
+    - IO_MUX_FC3_SPI_SS3
+    - IO_MUX_FC14_SPI_SS1
+    - IO_MUX_FC14_SPI_SS2
+    - IO_MUX_FC14_SPI_SS3
+
 ## [2.2.2]
 
 - Fixed MSG issues. No function change. 
