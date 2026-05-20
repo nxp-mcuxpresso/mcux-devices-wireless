@@ -1,7 +1,7 @@
 /*
 ** ###################################################################
 **     Version:             rev. 3.1, 2026-02-11
-**     Build:               b260506
+**     Build:               b260519
 **
 **     Abstract:
 **         Chip specific module features.
@@ -797,6 +797,10 @@
 #define FSL_FEATURE_SPC_HAS_LPBUFF (1)
 /* @brief Has VD_SYS_CFG register. */
 #define FSL_FEATURE_SPC_HAS_VDD_SYS (1)
+/* @brief Has VDD1P8 low-voltage detect feature. */
+#define FSL_FEATURE_SPC_HAS_VDD1P8_LVD (0)
+/* @brief Has no DCDC frequency control (register bits DCDC_CFG[FREQ_CNTRL_ON/FREQ_CNTRL]). */
+#define FSL_FEATURE_SPC_HAS_NO_DCDC_FREQ_CNTRL (0)
 
 /* SYSPM module features */
 
@@ -868,10 +872,6 @@
 #define FSL_FEATURE_TPM_HAS_GLOBAL_TIME_BASE_SYNC (1)
 /* @brief Is affected by errata with ID 050050 (Incorrect duty output when EPWM mode is set to PS=0 during write 1 to CnV register). */
 #define FSL_FEATURE_TPM_HAS_ERRATA_050050 (0)
-
-/* TRGMUX module features */
-
-/* No feature definitions */
 
 /* VREF module features */
 
