@@ -1,5 +1,5 @@
 /*
- * Copyright 2021-2022, 2025-2026 NXP
+ * Copyright 2021-2022, 2025 NXP
  *  
  *
  * SPDX-License-Identifier: BSD-3-Clause
@@ -14,12 +14,15 @@
  * The platform can select only four clock sources.
  *
  * $Justification clock_c_ref_2$
+ * After the board starts, the SIRC clock source is always enable and valid.
+ *
+ * $Justification clock_c_ref_3$
  * During the init FIRC process, the De-init Firc is first performed.
  * In this process, the successful De-init will Write One to clear the
  * FIRCERR bit of the FIRCCSR register.And trim, has only two modes to
  * choose from, and the setting trim mode is always successful.
  *
- * $Justification clock_c_ref_3$
+ * $Justification clock_c_ref_4$
  * After the board starts, the FRO192M output clock is always valid.
  *
  */
@@ -32,6 +35,8 @@
 #define FSL_COMPONENT_ID "platform.drivers.clock"
 #endif
 
+/*! @brief Slow IRC clock frequency. */
+#define SCG_SIRC_FREQ 6000000U
 /*! @brief Get the RANGE value of the Fast IRC. */
 #define SCG_FIRCCFG_RANGE_VAL ((CLOCK_REG(&SCG0->FIRCCFG) & SCG_FIRCCFG_RANGE_MASK) >> SCG_FIRCCFG_RANGE_SHIFT)
 /*! @brief Get the value of each field in MRCC register. */
@@ -128,6 +133,9 @@ uint32_t CLOCK_GetFreq(clock_name_t clockName)
         case kCLOCK_ScgSysOscClk:
             freq = CLOCK_GetSysOscFreq();
             break;
+        case kCLOCK_ScgSircClk:
+            freq = CLOCK_GetSircFreq();
+            break;
         case kCLOCK_ScgFircClk:
             freq = CLOCK_GetFircFreq();
             break;
@@ -175,6 +183,9 @@ uint32_t CLOCK_GetIpFreq(clock_ip_name_t name)
         case kCLOCK_Flexio0:
             switch (MRCC_MUX_VAL(reg))
             {
+                case (uint32_t)kCLOCK_IpSrcFro6M:
+                    freq = CLOCK_GetSircFreq() / (((reg & MRCC_DIV_MASK) >> MRCC_DIV_SHIFT) + 1U);
+                    break;
                 case (uint32_t)kCLOCK_IpSrcFro192M:
                     freq = CLOCK_GetFircFreq() / (((reg & MRCC_DIV_MASK) >> MRCC_DIV_SHIFT) + 1U);
                     break;
@@ -192,6 +203,9 @@ uint32_t CLOCK_GetIpFreq(clock_ip_name_t name)
         case kCLOCK_Tpm1:
             switch (MRCC_MUX_VAL(reg))
             {
+                case (uint32_t)kCLOCK_IpSrcFro6M:
+                    freq = CLOCK_GetSircFreq() / (((reg & MRCC_DIV_MASK) >> MRCC_DIV_SHIFT) + 1U);
+                    break;
                 case (uint32_t)kCLOCK_IpSrcFro192M:
                     freq = CLOCK_GetFircFreq() / (((reg & MRCC_DIV_MASK) >> MRCC_DIV_SHIFT) + 1U);
                     break;
@@ -248,7 +262,7 @@ uint32_t CLOCK_GetSysClkFreq(scg_sys_clk_t type)
 
     /*
      * $Branch Coverage Justification$
-     * ((sysClkConfig.src) != (kSCG_SysClkSrcSysOsc ||
+     * ((sysClkConfig.src) != (kSCG_SysClkSrcSysOsc || kSCG_SysClkSrcSirc ||
      *   kSCG_SysClkSrcFirc || kSCG_SysClkSrcRosc)) not covered.
      * $ref clock_c_ref_1$.
      */
@@ -256,6 +270,9 @@ uint32_t CLOCK_GetSysClkFreq(scg_sys_clk_t type)
     {
         case kSCG_SysClkSrcSysOsc:
             freq = CLOCK_GetSysOscFreq();
+            break;
+        case kSCG_SysClkSrcSirc:
+            freq = CLOCK_GetSircFreq();
             break;
         case kSCG_SysClkSrcFirc:
             freq = CLOCK_GetFircFreq();
@@ -381,6 +398,106 @@ uint32_t CLOCK_GetSysOscFreq(void)
 }
 
 /*!
+ * brief Initializes the SCG slow IRC clock.
+ *
+ * This function enables the SCG slow IRC clock according to the
+ * configuration.
+ *
+ * param config   Pointer to the configuration structure.
+ * retval kStatus_Success SIRC is initialized.
+ * retval kStatus_SCG_Busy SIRC has been enabled and is used by system clock.
+ * retval kStatus_ReadOnly SIRC control register is locked.
+ *
+ * note This function can't detect whether the system OSC has been enabled and
+ * used by an IP.
+ */
+status_t CLOCK_InitSirc(const scg_sirc_config_t *config)
+{
+    assert(NULL != config);
+
+    status_t status;
+
+    /* De-init the SIRC first. */
+    status = CLOCK_DeinitSirc();
+
+    if (kStatus_Success != status)
+    {
+        return status;
+    }
+
+    CLOCK_REG(&SCG0->SIRCCSR) = (uint32_t)config->enableMode;
+
+    /* Wait for SIRC clock to be valid. */
+
+    /*
+     * $Branch Coverage Justification$
+     * (CLOCK_REG(&SCG0->SIRCCSR) & SCG_SIRCCSR_SIRCVLD_MASK) != SCG_SIRCCSR_SIRCVLD_MASK
+     * not covered.
+     * $ref clock_c_ref_2$.
+     */
+    while ((CLOCK_REG(&SCG0->SIRCCSR) & SCG_SIRCCSR_SIRCVLD_MASK) != SCG_SIRCCSR_SIRCVLD_MASK) /* GCOVR_EXCL_BR_LINE */
+    {
+    }
+
+    return (status_t)kStatus_Success;
+}
+
+/*!
+ * brief De-initializes the SCG slow IRC.
+ *
+ * This function disables the SCG slow IRC.
+ *
+ * retval kStatus_Success SIRC is deinitialized.
+ * retval kStatus_SCG_Busy SIRC is used by system clock.
+ * retval kStatus_ReadOnly SIRC control register is locked.
+ *
+ * note This function can't detect whether the SIRC is used by an IP.
+ */
+status_t CLOCK_DeinitSirc(void)
+{
+    uint32_t reg = CLOCK_REG(&SCG0->SIRCCSR);
+
+    /* If clock is used by system, return error. */
+    if ((reg & SCG_SIRCCSR_SIRCSEL_MASK) == SCG_SIRCCSR_SIRCSEL_MASK)
+    {
+        return (status_t)kStatus_SCG_Busy;
+    }
+
+    /* If configure register is locked, return error. */
+    if ((reg & SCG_SIRCCSR_LK_MASK) == SCG_SIRCCSR_LK_MASK)
+    {
+        return (status_t)kStatus_ReadOnly;
+    }
+
+    CLOCK_REG(&SCG0->SIRCCSR) = 0U;
+
+    return (status_t)kStatus_Success;
+}
+
+/*!
+ * brief Gets the SCG SIRC clock frequency.
+ *
+ * return  Clock frequency; If the clock is invalid, returns 0.
+ */
+uint32_t CLOCK_GetSircFreq(void)
+{
+    /*
+     * $Branch Coverage Justification$
+     * (CLOCK_REG(&SCG0->SIRCCSR) & SCG_SIRCCSR_SIRCVLD_MASK) != SCG_SIRCCSR_SIRCVLD_MASK
+     * not covered.
+     * $ref clock_c_ref_2$.
+     */
+    if ((CLOCK_REG(&SCG0->SIRCCSR) & SCG_SIRCCSR_SIRCVLD_MASK) == SCG_SIRCCSR_SIRCVLD_MASK) /* SIRC is valid. */ /* GCOVR_EXCL_BR_LINE */
+    {
+        return SCG_SIRC_FREQ;
+    }
+    else
+    {
+        return 0U; /* GCOVR_EXCL_LINE */
+    }
+}
+
+/*!
  * brief Initializes the SCG fast IRC clock.
  *
  * This function enables the SCG fast IRC clock according to the configuration.
@@ -426,7 +543,7 @@ status_t CLOCK_InitFirc(const scg_firc_config_t *config)
          * $Branch Coverage Justification$
          * (CLOCK_REG(&SCG0->FIRCCSR) & SCG_FIRCCSR_FIRCERR_MASK) == SCG_FIRCCSR_FIRCERR_MASK
          * not covered.
-         * $ref clock_c_ref_2$.
+         * $ref clock_c_ref_3$.
          */
         if ((CLOCK_REG(&SCG0->FIRCCSR) & SCG_FIRCCSR_FIRCERR_MASK) == SCG_FIRCCSR_FIRCERR_MASK) /* GCOVR_EXCL_BR_LINE */
         {
@@ -606,7 +723,7 @@ status_t CLOCK_InitRfFro192M(const fro192m_rf_clk_config_t *config)
      * $Branch Coverage Justification$
      * (CLOCK_REG(&FRO192M0->FROCCSR) & FRO192M_FROCCSR_VALID_MASK) != FRO192M_FROCCSR_VALID_MASK
      * not covered.
-     * $ref clock_c_ref_3$.
+     * $ref clock_c_ref_4$.
      */
     while ((CLOCK_REG(&FRO192M0->FROCCSR) & FRO192M_FROCCSR_VALID_MASK) != FRO192M_FROCCSR_VALID_MASK) /* GCOVR_EXCL_BR_LINE */
     {
@@ -628,7 +745,7 @@ uint32_t CLOCK_GetRfFro192MFreq(void)
      * $Branch Coverage Justification$
      * (CLOCK_REG(&FRO192M0->FROCCSR) & FRO192M_FROCCSR_VALID_MASK) != FRO192M_FROCCSR_VALID_MASK
      * not covered.
-     * $ref clock_c_ref_3$.
+     * $ref clock_c_ref_4$.
      */
     if ((CLOCK_REG(&FRO192M0->FROCCSR) & FRO192M_FROCCSR_VALID_MASK) == FRO192M_FROCCSR_VALID_MASK) /* GCOVR_EXCL_BR_LINE */
     {

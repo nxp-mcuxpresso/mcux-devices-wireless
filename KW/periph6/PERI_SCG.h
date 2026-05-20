@@ -148,15 +148,17 @@ typedef struct {
   __IO uint32_t CLKOUTCNFG;                        /**< SCG CLKOUT Configuration Register, offset: 0x20 */
        uint8_t RESERVED_2[220];
   __IO uint32_t SOSCCSR;                           /**< System OSC Control Status Register, offset: 0x100 */
-       uint8_t RESERVED_3[508];
-  __IO uint32_t FIRCCSR;                           /**< Fast IRC Control Status Register, offset: 0x300 */
-       uint8_t RESERVED_4[4];
-  __IO uint32_t FIRCCFG;                           /**< Fast IRC Configuration Register, offset: 0x308 */
-  __IO uint32_t FIRCTCFG;                          /**< Fast IRC Trim Configuration Register, offset: 0x30C */
-       uint8_t RESERVED_5[8];
-  __IO uint32_t FIRCSTAT;                          /**< Fast IRC Status Register, offset: 0x318 */
-       uint8_t RESERVED_6[228];
-  __IO uint32_t ROSCCSR;                           /**< RTC OSC Control Status Register, offset: 0x400 */
+       uint8_t RESERVED_3[252];
+  __IO uint32_t SIRCCSR;                           /**< Slow IRC Control Status Register, offset: 0x200 */
+       uint8_t RESERVED_4[252];
+   __IO uint32_t FIRCCSR;                           /**< Fast IRC Control Status Register, offset: 0x300 */
+       uint8_t RESERVED_5[4];
+   __IO uint32_t FIRCCFG;                           /**< Fast IRC Configuration Register, offset: 0x308 */
+   __IO uint32_t FIRCTCFG;                          /**< Fast IRC Trim Configuration Register, offset: 0x30C */
+       uint8_t RESERVED_6[8];
+   __IO uint32_t FIRCSTAT;                          /**< Fast IRC Status Register, offset: 0x318 */
+       uint8_t RESERVED_7[228];
+   __IO uint32_t ROSCCSR;                           /**< RTC OSC Control Status Register, offset: 0x400 */
 } SCG_Type;
 
 /* ----------------------------------------------------------------------------
@@ -454,6 +456,42 @@ typedef struct {
  *  0b1..System OSC Clock Monitor is enabled and detected an error
  */
 #define SCG_SOSCCSR_SOSCERR(x)                   (((uint32_t)(((uint32_t)(x)) << SCG_SOSCCSR_SOSCERR_SHIFT)) & SCG_SOSCCSR_SOSCERR_MASK)
+/*! @} */
+
+/*! @name SIRCCSR - Slow IRC Control Status Register */
+/*! @{ */
+
+#define SCG_SIRCCSR_SIRCSTEN_MASK                (0x2U)
+#define SCG_SIRCCSR_SIRCSTEN_SHIFT               (1U)
+/*! SIRCSTEN - Slow IRC Stop Enable
+ *  0b0..Slow IRC is disabled in sleep modes
+ *  0b1..Slow IRC is enabled in SLEEP mode
+ */
+#define SCG_SIRCCSR_SIRCSTEN(x)                  (((uint32_t)(((uint32_t)(x)) << SCG_SIRCCSR_SIRCSTEN_SHIFT)) & SCG_SIRCCSR_SIRCSTEN_MASK)
+
+#define SCG_SIRCCSR_LK_MASK                      (0x800000U)
+#define SCG_SIRCCSR_LK_SHIFT                     (23U)
+/*! LK - Lock Register
+ *  0b0..Control Status Register can be written.
+ *  0b1..Control Status Register cannot be written.
+ */
+#define SCG_SIRCCSR_LK(x)                        (((uint32_t)(((uint32_t)(x)) << SCG_SIRCCSR_LK_SHIFT)) & SCG_SIRCCSR_LK_MASK)
+
+#define SCG_SIRCCSR_SIRCVLD_MASK                 (0x1000000U)
+#define SCG_SIRCCSR_SIRCVLD_SHIFT                (24U)
+/*! SIRCVLD - Slow IRC Valid
+ *  0b0..Slow IRC is not enabled or clock is not valid
+ *  0b1..Slow IRC is enabled and output clock is valid
+ */
+#define SCG_SIRCCSR_SIRCVLD(x)                   (((uint32_t)(((uint32_t)(x)) << SCG_SIRCCSR_SIRCVLD_SHIFT)) & SCG_SIRCCSR_SIRCVLD_MASK)
+
+#define SCG_SIRCCSR_SIRCSEL_MASK                 (0x2000000U)
+#define SCG_SIRCCSR_SIRCSEL_SHIFT                (25U)
+/*! SIRCSEL - Slow IRC Selected
+ *  0b0..Slow IRC is not the system clock source
+ *  0b1..Slow IRC is the system clock source
+ */
+#define SCG_SIRCCSR_SIRCSEL(x)                   (((uint32_t)(((uint32_t)(x)) << SCG_SIRCCSR_SIRCSEL_SHIFT)) & SCG_SIRCCSR_SIRCSEL_MASK)
 /*! @} */
 
 /*! @name FIRCCSR - Fast IRC Control Status Register */

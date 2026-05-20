@@ -1,36 +1,29 @@
 # CLOCK
 
-## [2.2.0]
-
-- Improvements
-  - Remove SIRC-related enums, structures, and functions
-  - Remove unused clock definitions: kCLOCK_Tstmr0, kCLOCK_Sirc_vsys_gating
-  - Remove ERR052742 errata documentation for FRO6M clock stability
-
 ## [2.1.5]
 
-- Improvements
+- Improvements:
   - Fixed violations of the MISRA C-2012 Rule 10.1.
 
 ## [2.1.4]
 
-- Improvements
+- Improvements:
   - Extend PORT_CLOCKS and GPIO_CLOCKS definitions to include kCLOCK_NOGATE.
   - Fix assertion issue when calling GPIO_PinInit API with GPIOD as first parameter.
 
 ## [2.1.3]
 
-- Bug Fixes
+- Bug Fixes:
   - Fixed violations of the CERT INT31-C.
 
 ## [2.1.2]
 
-- Improvements
+- Improvements:
   - Added comments for ERR052742: FRO6M clock is not stable.
 
 ## [2.1.1]
 
-- New Features
+- New Features:
   - Provide the new API CLOCK_IsFIRCAutoTrimLocked to check whether FIRC auto trim locked to target frequency range.
 
 ## [2.1.0]
