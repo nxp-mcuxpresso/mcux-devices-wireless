@@ -2,9 +2,9 @@
 ** ###################################################################
 **     Processor:           KW43B43ZC6MFT
 **     Compiler:            GNU C Compiler
-**     Reference manual:    Rev. 1 Draft F, 2025-10-18
+**     Reference manual:    Rev. 1, 2026-07-08
 **     Version:             rev. 1.0, 2020-05-12
-**     Build:               b260316
+**     Build:               b260721
 **
 **     Abstract:
 **         Linker file for the GNU C Compiler
