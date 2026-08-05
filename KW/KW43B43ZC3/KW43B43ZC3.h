@@ -8,7 +8,7 @@
 **
 **     Reference manual:    Rev. 1, 2026-07-08
 **     Version:             rev. 1.0, 2020-05-12
-**     Build:               b260721
+**     Build:               b260722
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for KW43B43ZC3
