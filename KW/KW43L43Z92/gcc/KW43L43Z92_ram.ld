@@ -4,7 +4,7 @@
 **     Compiler:            GNU C Compiler
 **     Reference manual:    Rev. 1, 2026-07-08
 **     Version:             rev. 1.0, 2020-05-12
-**     Build:               b260721
+**     Build:               b261022
 **
 **     Abstract:
 **         Linker file for the GNU C Compiler
